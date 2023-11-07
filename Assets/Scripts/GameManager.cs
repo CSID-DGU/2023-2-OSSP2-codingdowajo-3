@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
 
+
     void Awake()
     {
         I = this;
