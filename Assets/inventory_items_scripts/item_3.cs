@@ -45,14 +45,14 @@ public class item_3 : MonoBehaviour,IPointerClickHandler
         if(event_inventory.showwhichitems[2] == -1) itemImage.sprite = null;
         else {
             
-            switch(event_inventory.showwhichitems[2]){
-                case 0: /*itemImage.sprite = Resources.Load<Sprite>("");*/break; 
-                case 1: /*itemImage.sprite = Resources.Load<Sprite>("");*/break; 
-                case 2: itemImage.sprite = Resources.Load<Sprite>("glasses"); break;
-                case 3: /*itemImage.sprite = Resources.Load<Sprite>("");*/break; 
-                case 4: itemImage.sprite = Resources.Load<Sprite>("hat");break; 
-                case 5: /*itemImage.sprite = Resources.Load<Sprite>("");*/break;
-            }
+           switch(event_inventory.showwhichitems[2]){
+                case 0: itemImage.sprite = Resources.Load<Sprite>("1_hat_1");break; 
+                case 1: itemImage.sprite = Resources.Load<Sprite>("2_hat_2");break; 
+                case 2: itemImage.sprite = Resources.Load<Sprite>("3_hat_3");break;
+                case 3: itemImage.sprite = Resources.Load<Sprite>("4_glasses_1");break; 
+                case 4: itemImage.sprite = Resources.Load<Sprite>("5_glasses_2");break; 
+                case 5: itemImage.sprite = Resources.Load<Sprite>("6_glasses_3");break;
+           }
         }
          if(isvisible_item == false)  green_check.SetActive(false);
     }
