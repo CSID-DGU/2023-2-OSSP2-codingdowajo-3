@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 public class onclick_getpaterbtn : MonoBehaviour
 {
-    public static int BlackHistoryPaper = 0;
 
     private bool buttonEnabled = true;
     private DateTime lastClickTime;
@@ -15,8 +14,8 @@ public class onclick_getpaterbtn : MonoBehaviour
     
     void getpaper(){
         if(buttonEnabled) {
-            BlackHistoryPaper++;
-            Debug.Log(BlackHistoryPaper);
+            Player_Character.BlackHistoryPaper++;
+            Debug.Log(Player_Character.BlackHistoryPaper);
             buttonEnabled = false;
             lastClickTime = DateTime.Now;
         }
