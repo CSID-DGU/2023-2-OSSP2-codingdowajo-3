@@ -26,8 +26,8 @@ public class dataProcess : MonoBehaviour
     {
         Debug.Log("현재 시각");
         //사용자 정보
-        string place = "학교";
-        string userInput = "내 친구와 싸웠어. 나는 그 친구가 싫어";
+        string place = "집";
+        string userInput = "방에서 혼자 크게 노래를 부르고 있었는데 옆집에서 찾아와서 너무 시끄럽다고 했어 나는 너무 창피했어";
         int userAge = 12;
         string userGender = "female";
 
