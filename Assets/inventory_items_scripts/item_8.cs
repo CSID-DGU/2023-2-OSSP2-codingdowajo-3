@@ -29,7 +29,7 @@ public class item_8 : MonoBehaviour,IPointerClickHandler
         else{
             green_check.SetActive(false);
             isvisible_item = false;
-            Player_Character.state_of_player_char = 0;
+            Player_Character.state_of_player_char = -1;
         }
     }
     void Awake() { itemImage = GetComponent<Image>(); }

@@ -5,7 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class event_inventory : MonoBehaviour,IPointerClickHandler
-{  private const int invensize = 10;
+{  public Canvas canvas;
+    public GameObject modalBG;
+    
+    private const int invensize = 10;
     public static int[] showwhichitems;
     private void check_haveitems(){
         for(int i = 0;i<invensize;i++) showwhichitems[i] = -1;
@@ -19,9 +22,10 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
     public GameObject inven_pnl;
     public void OnPointerClick(PointerEventData eventData)
     {  
+        canvas.sortingOrder = 1; 
         check_haveitems();
-
        inven_pnl.SetActive(true);
+       modalBG.SetActive(true);
     }
     void Awake() {
         showwhichitems = new int[invensize];
@@ -30,7 +34,7 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
     // Start is called before the first frame update
     private void Start()
     {   
-      
+      canvas = GetComponent<Canvas>();
     }
 
     // Update is called once per frame
