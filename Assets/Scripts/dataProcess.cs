@@ -26,10 +26,10 @@ public class dataProcess : MonoBehaviour
     {
         Debug.Log("현재 시각");
         //사용자 정보
-        string place = "집";
-        string userInput = "방에서 혼자 크게 노래를 부르고 있었는데 옆집에서 찾아와서 너무 시끄럽다고 했어 나는 너무 창피했어";
-        int userAge = 12;
-        string userGender = "female";
+        string place = "대학교";
+        string userInput = "이력서를 냈지만 바로 탈락하고 말았어.";
+        int userAge = 25;
+        string userGender = "male";
 
         // 장소, 사용자 input값 번역
         string translatedInput = TranslateUserInput(userInput);
@@ -129,102 +129,139 @@ public class dataProcess : MonoBehaviour
 
         // I와 be동사 바꾸기
         List<string> words = new List<string>(ISentence.Split(' ')); // 공백을 기준으로 단어 분할
-
+        int I_cnt = 0;
         for (int i = 0; i < words.Count; i++)
         {
             if (words[i] == "I")
             {
                 if (userAge >= 20 && userGender == "female")
                 {
-                    if (emotionLabel == 0)
+                    if (I_cnt == 0)
                     {
-                        words[i] = "Woman who is angry";
-                    }
-                    else if (emotionLabel == 1)
-                    {
-                        words[i] = "Woman who is scary";
-                    }
-                    else if (emotionLabel == 2 || emotionLabel == 3)
-                    {
-                       words[i] = "Woman who is happy";
-                    }
-                    else if (emotionLabel == 4)
-                    {
-                        words[i] = "Woman who is sad";
+                        if (emotionLabel == 0)
+                        {
+                            words[i] = "Woman who is angry";
+                        }
+                        else if (emotionLabel == 1)
+                        {
+                            words[i] = "Woman who is scary";
+                        }
+                        else if (emotionLabel == 2 || emotionLabel == 3)
+                        {
+                            words[i] = "Woman who is happy";
+                        }
+                        else if (emotionLabel == 4)
+                        {
+                            words[i] = "Woman who is sad";
+                        }
+                        else
+                        {
+                            words[i] = "Woman who is surprised";
+                        }
+                        I_cnt = I_cnt + 1;
                     }
                     else
                     {
-                        words[i] = "Woman who is surprised";
+                        words[i] = "she";
+                        I_cnt = I_cnt + 1;
                     }
+                    
                     
                 }
                 else if (userAge >= 20 && userGender == "male")
                 {
-                    if (emotionLabel == 0)
+                    if (I_cnt == 0)
                     {
-                        words[i] = "Man who is angry";
-                    }
-                    else if (emotionLabel == 1)
-                    {
-                        words[i] = "Man who is scary";
-                    }
-                    else if (emotionLabel == 2 || emotionLabel == 3)
-                    {
-                        words[i] = "Man who is happy";
-                    }
-                    else if (emotionLabel == 4)
-                    {
-                        words[i] = "Man who is sad";
+                        if (emotionLabel == 0)
+                        {
+                            words[i] = "Man who is angry";
+                        }
+                        else if (emotionLabel == 1)
+                        {
+                            words[i] = "Man who is scary";
+                        }
+                        else if (emotionLabel == 2 || emotionLabel == 3)
+                        {
+                            words[i] = "Man who is happy";
+                        }
+                        else if (emotionLabel == 4)
+                        {
+                            words[i] = "Man who is sad";
+                        }
+                        else
+                        {
+                            words[i] = "Man who is surprised";
+                        }
+                        I_cnt = I_cnt + 1;
                     }
                     else
                     {
-                        words[i] = "Man who is surprised";
+                        words[i] = "he";
+                        I_cnt = I_cnt + 1;
                     }
                 }
                 else if (userAge < 20 && userGender == "female")
                 {
-                    if (emotionLabel == 0)
+                    if (I_cnt == 0)
                     {
-                        words[i] = "Girl who is angry";
-                    }
-                    else if (emotionLabel == 1)
-                    {
-                        words[i] = "Girl who is scary";
-                    }
-                    else if (emotionLabel == 2 || emotionLabel == 3)
-                    {
-                        words[i] = "Girl who is happy";
-                    }
-                    else if (emotionLabel == 4)
-                    {
-                        words[i] = "Girl who is sad";
+                        if (emotionLabel == 0)
+                        {
+                            words[i] = "Girl who is angry";
+                        }
+                        else if (emotionLabel == 1)
+                        {
+                            words[i] = "Girl who is scary";
+                        }
+                        else if (emotionLabel == 2 || emotionLabel == 3)
+                        {
+                            words[i] = "Girl who is happy";
+                        }
+                        else if (emotionLabel == 4)
+                        {
+                            words[i] = "Girl who is sad";
+                        }
+                        else
+                        {
+                            words[i] = "Girl who is surprised";
+                        }
+                        I_cnt = I_cnt + 1;
                     }
                     else
                     {
-                        words[i] = "Girl who is surprised";
+                        words[i] = "she";
+                        I_cnt = I_cnt + 1;
                     }
                 }
                 else
                 {
-                    if (emotionLabel == 0)
+                    if (I_cnt == 0)
                     {
-                        words[i] = "Boy who is angry";
-                    }
-                    else if (emotionLabel == 1)
-                    {
-                        words[i] = "Boy who is scared";
-                    }
-                    else if (emotionLabel == 2 || emotionLabel == 3)
-                    {
-                        words[i] = "Boy who is happy";
-                    }
-                    else if (emotionLabel == 4)
-                    {
-                        words[i] = "Boy who is sad";
+                        if (emotionLabel == 0)
+                        {
+                            words[i] = "Boy who is angry";
+                        }
+                        else if (emotionLabel == 1)
+                        {
+                            words[i] = "Boy who is scared";
+                        }
+                        else if (emotionLabel == 2 || emotionLabel == 3)
+                        {
+                            words[i] = "Boy who is happy";
+                        }
+                        else if (emotionLabel == 4)
+                        {
+                            words[i] = "Boy who is sad";
+                        }
+                        else
+                        {
+                            words[i] = "Boy who is surprised";
+                        }
+                        I_cnt = I_cnt + 1;
                     }
                     else
                     {
-                        words[i] = "Boy who is surprised";
+                        words[i] = "he";
+                        I_cnt = I_cnt + 1;
                     }
                 }
             }
@@ -234,15 +271,36 @@ public class dataProcess : MonoBehaviour
             }
             else if (words[i] == "my")
             {
-                words[i] = "her";
+                if(userGender == "female")
+                {
+                    words[i] = "her";
+                }
+                else
+                {
+                    words[i] = "his";
+                }
             }
             else if (words[i] == "me")
             {
-                words[i] = "her";
+                if (userGender == "female")
+                {
+                    words[i] = "her";
+                }
+                else
+                {
+                    words[i] = "him";
+                }
             }
             else if (words[i] == "mine")
             {
-                words[i] = "hers";
+                if (userGender == "female")
+                {
+                    words[i] = "hers";
+                }
+                else
+                {
+                    words[i] = "his";
+                };
             }
         }
 
