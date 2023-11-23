@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+public static class PLAYER_CONSTANT
+{
+    //흑역사 캐릭터의 수
+    public const int NumOf_BlackHistoryCharacter = 30;
+}
+
 public class Player_Character : MonoBehaviour
 {
     public static int gender = 0; //0:male, 1:female
@@ -19,6 +26,9 @@ public class Player_Character : MonoBehaviour
     /*  glasses1   glasses2    glasses3      */
         true,      true,      true
     };
+
+    //소유한 흑역사 캐릭터 - index로 관리; Have_BlackHistoryCharacter[CharacterIndex] = True of False
+    public static bool[] Have_BlackHistoryCharacter = new bool[PLAYER_CONSTANT.NumOf_BlackHistoryCharacter];
 
     //플레이어캐릭터 레벨
     public static int UserChar_Level = 1;
