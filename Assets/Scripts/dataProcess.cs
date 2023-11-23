@@ -26,10 +26,10 @@ public class dataProcess : MonoBehaviour
     {
         Debug.Log("현재 시각");
         //사용자 정보
-        string place = "집";
-        string userInput = "방에서 혼자 크게 노래를 부르고 있었는데 옆집에서 찾아와서 너무 시끄럽다고 했어 나는 너무 창피했어";
-        int userAge = 12;
-        string userGender = "female";
+        string place = "";
+        string userInput = "";
+        int userAge = 24;
+        string userGender = "male";
 
         // 장소, 사용자 input값 번역
         string translatedInput = TranslateUserInput(userInput);
