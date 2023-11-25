@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: rare 2
   m_EditorClassIdentifier: 
   CharacterName: 
-  CharacterImage: {fileID: 154798788, guid: d8a109554e3ca3242b16e03f118ecae0, type: 3}
+  CharacterImage: {fileID: 1147455759, guid: ca738608112b31b48a03ef7e09a30ef9, type: 3}
   CharacterIndex: 2
