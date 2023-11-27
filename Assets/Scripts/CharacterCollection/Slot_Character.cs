@@ -7,7 +7,8 @@ using static UnityEditor.Progress;
 //도감창 안 슬롯에 흑역사 캐릭터 띄워주기
 public class Slot_Character : MonoBehaviour
 {
-    [SerializeField] Image image;//띄워줄 이미지
+    [SerializeField] Image image;//띄워줄 이미지    
+    [SerializeField] Sprite questionMark;
     
     private BlackHistoryCharacter _blackHistoryCharacter;
     public BlackHistoryCharacter blackHistoryCharacter //캐릭터 띄우기
@@ -18,13 +19,13 @@ public class Slot_Character : MonoBehaviour
             _blackHistoryCharacter = value;
             if (Player_Character.Have_BlackHistoryCharacter[_blackHistoryCharacter.CharacterIndex] == true)//흑역사 캐릭터 가지고있으면
             {
-                
+
                 image.sprite = _blackHistoryCharacter.CharacterImage;
                 image.color = new Color(1, 1, 1, 1);
             }
             else//흑역사 캐릭터를 가지고있지 않으면
             {
-                //image.sprite = questionMark;
+                image.sprite = questionMark;
                 image.color = new Color(1, 1, 1, 1);
             }
         }
@@ -38,7 +39,7 @@ public class Slot_Character : MonoBehaviour
     //캐릭터 띄우기
     private void OnEnable()
     {
-        if(blackHistoryCharacter != null)//없으면 nullreference오류남; 이벤트 발생 순서때문
+        if (blackHistoryCharacter != null)//없으면 nullreference오류남; 이벤트 발생 순서때문
         {
             if (Player_Character.Have_BlackHistoryCharacter[_blackHistoryCharacter.CharacterIndex] == true)
             {
@@ -47,7 +48,7 @@ public class Slot_Character : MonoBehaviour
             }
             else
             {
-                //image.sprite = questionMark;
+                image.sprite = questionMark;
                 image.color = new Color(1, 1, 1, 1);
             }
         }
