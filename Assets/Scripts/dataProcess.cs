@@ -26,9 +26,9 @@ public class dataProcess : MonoBehaviour
     {
         Debug.Log("현재 시각");
         //사용자 정보
-        string place = "대학교";
-        string userInput = "이력서를 냈지만 바로 탈락하고 말았어.";
-        int userAge = 25;
+        string place = "운동장";
+        string userInput = "5학년 때 학교에서 팝스 (PAPS)를 측정했던 때가 있었다. 팝스는 체육을 얼마나 잘하는지 측정하는 시험 같은 거였는데, 나는 '뭐 그렇게 어려운 거겠어?' 라고 했다가 큰 코 다쳤다. 팝스는 왕복 오래달리기, 제자리 멀리뛰기, 악력 측정 등으로 이루어 져 있는데, 멀리뛰기를 하다가 일어났다.";
+        int userAge = 10;
         string userGender = "male";
 
         // 장소, 사용자 input값 번역
@@ -103,7 +103,7 @@ public class dataProcess : MonoBehaviour
             System.Threading.Thread.Sleep(1000);
             var buttonBox = driver.FindElement(By.XPath("//*[@id='btnTranslate']"));
             buttonBox.Click();
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(900);
             transInputResult = driver.FindElement(By.XPath("//*[@id='txtTarget']")).Text;
             Debug.Log(transInputResult);
         }
@@ -117,196 +117,165 @@ public class dataProcess : MonoBehaviour
         string[] sentences = Regex.Split(translatedResult, @"(?<=[.!?]) ");
         string ISentence = "";
 
-        // I가 들어있는 문장 추출
+        string resultSentence = "";
         foreach (string sentence in sentences)
         {
-            if (sentence.Contains("I"))
+            // 모든 문장에 대해 검색
+            ISentence = sentence;
+            // I와 be동사 바꾸기 
+            // 라벨이 3일 때 잘못된 감정 분류로 간주
+            List<string> words = new List<string>(ISentence.Split(' ')); // 공백을 기준으로 단어 분할
+            int I_cnt = 0;
+            for (int i = 0; i < words.Count; i++)
             {
-                ISentence = sentence;
-                break;
+                if (words[i] == "I")
+                {
+                    if (userAge >= 20 && userGender == "female")
+                    {
+                        if (I_cnt == 0)
+                        {
+                            words[i] = "Woman";
+                            I_cnt = I_cnt + 1;
+                        }
+                        else
+                        {
+                            words[i] = "she";
+                            I_cnt = I_cnt + 1;
+                        }
+
+
+                    }
+                    else if (userAge >= 20 && userGender == "male")
+                    {
+                        if (I_cnt == 0)
+                        {
+                            words[i] = "Man";
+                            I_cnt = I_cnt + 1;
+                        }
+                        else
+                        {
+                            words[i] = "he";
+                            I_cnt = I_cnt + 1;
+                        }
+                    }
+                    else if (userAge < 20 && userGender == "female")
+                    {
+                        if (I_cnt == 0)
+                        {
+                            words[i] = "Girl";
+                            I_cnt = I_cnt + 1;
+                        }
+                        else
+                        {
+                            words[i] = "she";
+                            I_cnt = I_cnt + 1;
+                        }
+                    }
+                    else
+                    {
+                        if (I_cnt == 0)
+                        {
+                            words[i] = "Boy";
+                            I_cnt = I_cnt + 1;
+                        }
+                        else
+                        {
+                            words[i] = "he";
+                            I_cnt = I_cnt + 1;
+                        }
+                    }
+                }
+                else if (words[i] == "am")
+                {
+                    words[i] = "is";
+                }
+                else if (words[i] == "my")
+                {
+                    if (userGender == "female")
+                    {
+                        words[i] = "her";
+                    }
+                    else
+                    {
+                        words[i] = "his";
+                    }
+                }
+                else if (words[i] == "me")
+                {
+                    if (userGender == "female")
+                    {
+                        words[i] = "her";
+                    }
+                    else
+                    {
+                        words[i] = "him";
+                    }
+                }
+                else if (words[i] == "mine")
+                {
+                    if (userGender == "female")
+                    {
+                        words[i] = "hers";
+                    }
+                    else
+                    {
+                        words[i] = "his";
+                    };
+                }
             }
+
+            string modifiedText = string.Join(" ", words); // 리스트를 다시 문자열로 합침
+            resultSentence = resultSentence + " "  + modifiedText;
         }
 
-        // I와 be동사 바꾸기
-        List<string> words = new List<string>(ISentence.Split(' ')); // 공백을 기준으로 단어 분할
-        int I_cnt = 0;
-        for (int i = 0; i < words.Count; i++)
+        // 감정 문장 따로 생성하여 뒤에 붙이기
+        if (userGender == "female")
         {
-            if (words[i] == "I")
+            if (emotionLabel == 0)
             {
-                if (userAge >= 20 && userGender == "female")
-                {
-                    if (I_cnt == 0)
-                    {
-                        if (emotionLabel == 0)
-                        {
-                            words[i] = "Woman who is angry";
-                        }
-                        else if (emotionLabel == 1)
-                        {
-                            words[i] = "Woman who is scary";
-                        }
-                        else if (emotionLabel == 2 || emotionLabel == 3)
-                        {
-                            words[i] = "Woman who is happy";
-                        }
-                        else if (emotionLabel == 4)
-                        {
-                            words[i] = "Woman who is sad";
-                        }
-                        else
-                        {
-                            words[i] = "Woman who is surprised";
-                        }
-                        I_cnt = I_cnt + 1;
-                    }
-                    else
-                    {
-                        words[i] = "she";
-                        I_cnt = I_cnt + 1;
-                    }
-                    
-                    
-                }
-                else if (userAge >= 20 && userGender == "male")
-                {
-                    if (I_cnt == 0)
-                    {
-                        if (emotionLabel == 0)
-                        {
-                            words[i] = "Man who is angry";
-                        }
-                        else if (emotionLabel == 1)
-                        {
-                            words[i] = "Man who is scary";
-                        }
-                        else if (emotionLabel == 2 || emotionLabel == 3)
-                        {
-                            words[i] = "Man who is happy";
-                        }
-                        else if (emotionLabel == 4)
-                        {
-                            words[i] = "Man who is sad";
-                        }
-                        else
-                        {
-                            words[i] = "Man who is surprised";
-                        }
-                        I_cnt = I_cnt + 1;
-                    }
-                    else
-                    {
-                        words[i] = "he";
-                        I_cnt = I_cnt + 1;
-                    }
-                }
-                else if (userAge < 20 && userGender == "female")
-                {
-                    if (I_cnt == 0)
-                    {
-                        if (emotionLabel == 0)
-                        {
-                            words[i] = "Girl who is angry";
-                        }
-                        else if (emotionLabel == 1)
-                        {
-                            words[i] = "Girl who is scary";
-                        }
-                        else if (emotionLabel == 2 || emotionLabel == 3)
-                        {
-                            words[i] = "Girl who is happy";
-                        }
-                        else if (emotionLabel == 4)
-                        {
-                            words[i] = "Girl who is sad";
-                        }
-                        else
-                        {
-                            words[i] = "Girl who is surprised";
-                        }
-                        I_cnt = I_cnt + 1;
-                    }
-                    else
-                    {
-                        words[i] = "she";
-                        I_cnt = I_cnt + 1;
-                    }
-                }
-                else
-                {
-                    if (I_cnt == 0)
-                    {
-                        if (emotionLabel == 0)
-                        {
-                            words[i] = "Boy who is angry";
-                        }
-                        else if (emotionLabel == 1)
-                        {
-                            words[i] = "Boy who is scared";
-                        }
-                        else if (emotionLabel == 2 || emotionLabel == 3)
-                        {
-                            words[i] = "Boy who is happy";
-                        }
-                        else if (emotionLabel == 4)
-                        {
-                            words[i] = "Boy who is sad";
-                        }
-                        else
-                        {
-                            words[i] = "Boy who is surprised";
-                        }
-                        I_cnt = I_cnt + 1;
-                    }
-                    else
-                    {
-                        words[i] = "he";
-                        I_cnt = I_cnt + 1;
-                    }
-                }
+                resultSentence = resultSentence +  " " + "She feels angry.";
+             }
+            else if (emotionLabel == 1)
+            {
+                resultSentence = resultSentence + " " + "She feels fear.";
             }
-            else if (words[i] == "am")
+            else if (emotionLabel == 2 || emotionLabel == 3)
             {
-                words[i] = "is";
+                resultSentence = resultSentence + " " + "She feels unhappy.";
             }
-            else if (words[i] == "my")
+            else if (emotionLabel == 4)
             {
-                if(userGender == "female")
-                {
-                    words[i] = "her";
-                }
-                else
-                {
-                    words[i] = "his";
-                }
+                resultSentence = resultSentence + " " + "She feels sad.";
             }
-            else if (words[i] == "me")
+            else
             {
-                if (userGender == "female")
-                {
-                    words[i] = "her";
-                }
-                else
-                {
-                    words[i] = "him";
-                }
-            }
-            else if (words[i] == "mine")
-            {
-                if (userGender == "female")
-                {
-                    words[i] = "hers";
-                }
-                else
-                {
-                    words[i] = "his";
-                };
+                resultSentence = resultSentence + " " + "She feels surprise.";
             }
         }
-
-        string modifiedText = string.Join(" ", words); // 리스트를 다시 문자열로 합침
-        Debug.Log(modifiedText);
-
-        return modifiedText;
+        else
+        {
+            if (emotionLabel == 0)
+            {
+                resultSentence = resultSentence + " " + "He feels angry.";
+            }
+            else if (emotionLabel == 1)
+            {
+                resultSentence = resultSentence + " " + "He feels fear.";
+            }
+            else if (emotionLabel == 2 || emotionLabel == 3)
+            {
+                resultSentence = resultSentence + " " + "He feels unhappy.";
+            }
+            else if (emotionLabel == 4)
+            {
+                resultSentence = resultSentence + " " + "He feels sad.";
+            }
+            else
+            {
+                resultSentence = resultSentence + " " + "He feels surprise.";
+            }
+        }
+        Debug.Log(resultSentence);
+        return resultSentence;
     }
 }
