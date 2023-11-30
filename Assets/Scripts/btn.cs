@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class btn : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public GameObject tutorial_startscene;
     void Start()
     {
         
@@ -29,5 +32,19 @@ public class btn : MonoBehaviour
     public void MainStart()
     {
         SceneManager.LoadScene("MainScene");
+    }
+
+    public void GameStart()
+    {
+        if (!PlayerPrefs.HasKey("FirstRun"))
+        {
+            Debug.Log("first run");
+            tutorial_startscene.SetActive(true);
+            PlayerPrefs.SetInt("FirstRun", 1);
+        }
+        else
+        {
+            MainStart();
+        }
     }
 }
