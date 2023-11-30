@@ -26,9 +26,9 @@ public class dataProcess : MonoBehaviour
     {
         Debug.Log("현재 시각");
         //사용자 정보
-        string place = "운동장";
-        string userInput = "5학년 때 학교에서 팝스 (PAPS)를 측정했던 때가 있었다. 팝스는 체육을 얼마나 잘하는지 측정하는 시험 같은 거였는데, 나는 '뭐 그렇게 어려운 거겠어?' 라고 했다가 큰 코 다쳤다. 팝스는 왕복 오래달리기, 제자리 멀리뛰기, 악력 측정 등으로 이루어 져 있는데, 멀리뛰기를 하다가 일어났다.";
-        int userAge = 10;
+        string place = "공연장";
+        string userInput = "피아노 연주회에서 실수했을 때가 떠오른다. 열심히 알려주신 피아노 선생님과 응원해주신 부모님의 기대에 못미쳐 슬펐다. 지금까지 열심히 연습했던 것들이 허무해졌다.";
+        int userAge = 24;
         string userGender = "male";
 
         // 장소, 사용자 input값 번역
