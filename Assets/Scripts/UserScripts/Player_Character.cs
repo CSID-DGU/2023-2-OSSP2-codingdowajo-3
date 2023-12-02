@@ -11,6 +11,7 @@ public static class PLAYER_CONSTANT
 
 public class Player_Character : MonoBehaviour
 {
+    public static bool levelup = false;
     public static int gender = 0; //0:male, 1:female
     public static Image char_img;
 
@@ -62,6 +63,7 @@ public class Player_Character : MonoBehaviour
             case 1: char_img.sprite = Resources.Load<Sprite>("1_0");break;
             }
         }
+        levelup = false;
     }
 
     void Awake() { char_img = GetComponent<Image>(); 
@@ -75,6 +77,6 @@ public class Player_Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        if(char_img) update_appearance();
+        if(levelup) update_appearance();
     }
 }
