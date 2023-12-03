@@ -32,13 +32,12 @@ public class onclick_getpaterbtn : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-         if (!buttonEnabled){
+    {   if(buttonEnabled) return;
+
+        else{
             TimeSpan timePassed = DateTime.Now - lastClickTime;
-            if (timePassed.TotalHours >= 24)
-            {
+            if (timePassed.TotalHours >= 24) {
                 buttonEnabled = true;
-        
             }
         }
     }

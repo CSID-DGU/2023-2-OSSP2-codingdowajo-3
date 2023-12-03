@@ -31,6 +31,8 @@ public class item_5 : MonoBehaviour,IPointerClickHandler
             isvisible_item = false;
             Player_Character.state_of_player_char = -1;
         }
+        Player_Item_Equipped.update_item();
+        playerchar_withitem.set_resultImg_sprite();
     }
     void Awake() { itemImage = GetComponent<Image>(); }
     // Start is called before the first frame update

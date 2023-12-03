@@ -26,6 +26,8 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
         check_haveitems();
        inven_pnl.SetActive(true);
        modalBG.SetActive(true);
+       onlyplayerchar.resultImage.sprite = Player_Character.char_img.sprite;
+       playerchar_withitem.resultImage.sprite = Player_Item_Equipped.char_item.sprite;
     }
     void Awake() {
         showwhichitems = new int[invensize];
@@ -35,11 +37,5 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
     private void Start()
     {   
       canvas = GetComponent<Canvas>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
     }
 }

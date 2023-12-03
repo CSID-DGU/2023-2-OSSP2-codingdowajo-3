@@ -11,14 +11,16 @@ public static class PLAYER_CONSTANT
 
 public class Player_Character : MonoBehaviour
 {
-    public static bool levelup = false;
+
     public static int gender = 0; //0:male, 1:female
     public static Image char_img;
 
     //아이템의 전체 개수는 6개
     public const int numofitems = 6;
+
     //플레이어캐릭터의 외형 상태. 0이 디폴트
     public static int state_of_player_char = -1;
+
     //플레이어에게 특정 아이템이 있는지를 나타낸 bool배열
 
     public static bool[] haveitems = new bool[numofitems] {
@@ -42,7 +44,7 @@ public class Player_Character : MonoBehaviour
     //흑역사종이개수
     public static int BlackHistoryPaper = 0;
 
-    void update_appearance() {
+    public static void update_appearance() {
         //2nd evolution
         if(evolution_2){
             switch(gender){
@@ -63,20 +65,13 @@ public class Player_Character : MonoBehaviour
             case 1: char_img.sprite = Resources.Load<Sprite>("1_0");break;
             }
         }
-        levelup = false;
+        Player_Item_Equipped.update_item();
     }
-
-    void Awake() { char_img = GetComponent<Image>(); 
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   
-        if(levelup) update_appearance();
+         char_img = GetComponent<Image>();
+        update_appearance();
     }
 }

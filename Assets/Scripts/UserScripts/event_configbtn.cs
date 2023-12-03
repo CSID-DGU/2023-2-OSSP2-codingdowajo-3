@@ -21,11 +21,4 @@ public class event_configbtn : MonoBehaviour,IPointerClickHandler
     {
         canvas = GetComponent<Canvas>();
     }   
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
 }

@@ -28,6 +28,7 @@ public class hideinventory : MonoBehaviour
             invenpanel.SetActive(false);
             modalBG.SetActive(false);
             canvas.sortingOrder = 0;
+            Player_Item_Equipped.update_item();
         }
     }
 }

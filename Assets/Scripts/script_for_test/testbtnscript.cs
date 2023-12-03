@@ -14,22 +14,14 @@ public class testbtnscript : MonoBehaviour
 {
     if(Player_Character.gender == 1) Player_Character.gender = 0;
     else Player_Character.gender = 1;
+    Player_Character.update_appearance();
 }
 
  public void setzerobtn()
 {
     Player_Character.UserChar_Level = 1;
      Player_Character.UserChar_Exp = 0;
+     Player_Character.evolution_1 = false;
+     Player_Character.evolution_2 = false;
 }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

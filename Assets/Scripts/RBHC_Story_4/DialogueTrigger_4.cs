@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger_4 : MonoBehaviour
 {
-    public Dialogue info;
+    public Dialogue_4 info;
 
     public void Trigger() {
-        var system = FindObjectOfType<DialogueSystem>();
+        var system = FindObjectOfType<DialogueSystem_4>();
         system.Begin(info);
     }
 }
