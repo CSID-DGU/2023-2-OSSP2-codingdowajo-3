@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class Player_Item_Equipped : MonoBehaviour
-{
+{   //메인 화면에서 플레이어 캐릭터가 끼는 아이템을 할당해주는 스크립트
 
     public static Image char_item;
 
@@ -29,7 +29,7 @@ public class Player_Item_Equipped : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   //아이템 바꿔끼는 기능은 인벤토리에서만 가능. 인벤토리 뒤로가기 버튼 눌렀을 때만 호출되도록 최적화
         update_item();
     }
 }
