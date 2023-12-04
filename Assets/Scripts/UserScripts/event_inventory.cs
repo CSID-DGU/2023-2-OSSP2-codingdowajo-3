@@ -17,6 +17,24 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
                 showwhichitems[j++] = i;
             }
         }
+        for(int i = 0; i < invensize; i++){
+            if(showwhichitems[i]==Player_Character.state_of_player_char){
+                switch(i){
+                    case 0: item_1.isvisible_item = true;
+                    break;
+                    case 1: item_2.isvisible_item = true;
+                    break;
+                    case 2: item_3.isvisible_item = true;
+                    break;
+                    case 3: item_4.isvisible_item = true;
+                    break;
+                    case 4: item_5.isvisible_item = true;
+                    break;
+                    case 5: item_6.isvisible_item = true;
+                    break;
+                }
+            }
+        }
     }
 
     public GameObject inven_pnl;

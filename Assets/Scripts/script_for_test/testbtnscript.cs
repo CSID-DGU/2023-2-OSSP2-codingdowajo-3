@@ -7,7 +7,7 @@ public class testbtnscript : MonoBehaviour
 {
     public void get70btn()
 {
-    Player_Character.UserChar_Exp +=70;
+    Player_Character.get_exp(70);
 }
 
  public void transbtn()
@@ -20,8 +20,8 @@ public class testbtnscript : MonoBehaviour
  public void setzerobtn()
 {
     Player_Character.UserChar_Level = 1;
-     Player_Character.UserChar_Exp = 0;
      Player_Character.evolution_1 = false;
      Player_Character.evolution_2 = false;
+     Player_Character.get_exp(-Player_Character.UserChar_Exp);
 }
 }

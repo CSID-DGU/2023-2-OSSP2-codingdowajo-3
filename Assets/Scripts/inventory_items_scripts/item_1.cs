@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class item_1 : MonoBehaviour,IPointerClickHandler
 {   public static Image itemImage;
-    public static  bool isvisible_item = false;
+    public static  bool isvisible_item = false;//초록체크가 보이는지
 
     public GameObject green_check;
     public void OnPointerClick(PointerEventData eventData)
@@ -36,17 +36,12 @@ public class item_1 : MonoBehaviour,IPointerClickHandler
         Player_Item_Equipped.update_item();
         playerchar_withitem.set_resultImg_sprite();
     }
-    void Awake() { itemImage = GetComponent<Image>(); }
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-    
-
-    // Update is called once per frame
-    void Update()
-    {   
+        if(isvisible_item == true)  green_check.SetActive(true);
+            
+        itemImage = GetComponent<Image>();
         if(event_inventory.showwhichitems[0] == -1) itemImage.sprite = null;
         else {
             
@@ -59,7 +54,12 @@ public class item_1 : MonoBehaviour,IPointerClickHandler
                 case 5: itemImage.sprite = Resources.Load<Sprite>("6_glasses_3");break;
             }
         }     
-       
+    }
+    
+
+    // Update is called once per frame
+    void Update()
+    {   
        if(isvisible_item == false)  green_check.SetActive(false);
     }
 }

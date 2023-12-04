@@ -18,7 +18,9 @@ public class Player_Character : MonoBehaviour
     //아이템의 전체 개수는 6개
     public const int numofitems = 6;
 
-    //플레이어캐릭터의 외형 상태. 0이 디폴트
+    /* 플레이어캐릭터가 착용하는 아이템 상태. 0이 디폴트. 
+        -1은 아이템 없고, 0부터 5까지가 아이템
+    */
     public static int state_of_player_char = -1;
 
     //플레이어에게 특정 아이템이 있는지를 나타낸 bool배열
@@ -35,7 +37,7 @@ public class Player_Character : MonoBehaviour
 
     //플레이어캐릭터 레벨
     public static int UserChar_Level = 1;
-    //플레이어캐릭터 경험치
+    /* 플레이어캐릭터 경험치, 경험치 업데이트 시엔 get_exp함수 호출 */
     public static int UserChar_Exp = 0;
     //1차진화상태
     public static bool evolution_1 = false;
@@ -44,6 +46,7 @@ public class Player_Character : MonoBehaviour
     //흑역사종이개수
     public static int BlackHistoryPaper = 0;
 
+    //플레이어캐릭터 외형 변경. 성별/진화/아이템
     public static void update_appearance() {
         //2nd evolution
         if(evolution_2){
@@ -67,11 +70,64 @@ public class Player_Character : MonoBehaviour
         }
         Player_Item_Equipped.update_item();
     }
-    
-    // Start is called before the first frame update
+
+    /* 경험치 값 바뀔 때는 이 함수를 호출 */
+    public static void get_exp(int n) {
+        UserChar_Exp += n;
+        CurrentLevel.level_and_evolution_update();
+        }
+
     void Start()
-    {
-         char_img = GetComponent<Image>();
-        update_appearance();
+    {   
+        /* settings.json 파일 경로 출력문 */
+        //Debug.Log("Persistent Data Path: " + Application.persistentDataPath);
+    
+         load_settings();    //load json settings
+        char_img = GetComponent<Image>();
+        CurrentLevel.level_and_evolution_update();
+    }
+
+    void Update() {
+        //save_settings();
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // json 설정 불러오는 함수
+    void load_settings(){
+        GameSettings loadedSettings = ManageData.LoadSettings();
+
+        gender = loadedSettings.gender;//성별
+        UserChar_Level = loadedSettings.level;//레벨
+        UserChar_Exp = loadedSettings.exp;//경험치
+        state_of_player_char = loadedSettings.state_of_player_char;//장착한아이템
+        haveitems = loadedSettings.haveitems; //아이템을 가지고 있는가
+        BlackHistoryPaper = loadedSettings.BlackHistoryPaper;//흑역사종이개수
+
+    }
+
+    // json 설정 저장하는 함수
+    void save_settings() {
+        // 설정 변경
+        GameSettings mySettings = new GameSettings();
+        
+            mySettings.gender = gender;//성별
+            mySettings.level = UserChar_Level;//레벨
+            mySettings.exp = UserChar_Exp;//경험치
+            mySettings.state_of_player_char = state_of_player_char;//장착한아이템
+            mySettings.haveitems = haveitems; //아이템을 가지고 있는가
+            mySettings.BlackHistoryPaper = BlackHistoryPaper;//흑역사종이개수
+        
+
+        // 설정 저장
+        ManageData.SaveSettings(mySettings);
     }
 }

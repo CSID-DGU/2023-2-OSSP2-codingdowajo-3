@@ -10,10 +10,15 @@ public class onclick_getpaterbtn : MonoBehaviour
     private DateTime lastClickTime;
     
     Button btn;
-    // Start is called before the first frame update
     
     void getpaper(){
-        if(buttonEnabled) {
+        //if 24hours passed, enable the button
+         TimeSpan timePassed = DateTime.Now - lastClickTime;
+            if (timePassed.TotalHours >= 24) {
+                buttonEnabled = true;
+            }
+
+        if(buttonEnabled) { // button is enabled
             Player_Character.BlackHistoryPaper++;
             Debug.Log(Player_Character.BlackHistoryPaper);
             buttonEnabled = false;
@@ -27,18 +32,6 @@ public class onclick_getpaterbtn : MonoBehaviour
         if( btn!= null){
             btn.onClick.AddListener(getpaper);
             lastClickTime = DateTime.Now;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   if(buttonEnabled) return;
-
-        else{
-            TimeSpan timePassed = DateTime.Now - lastClickTime;
-            if (timePassed.TotalHours >= 24) {
-                buttonEnabled = true;
-            }
         }
     }
 }

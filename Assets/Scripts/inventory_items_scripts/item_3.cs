@@ -34,16 +34,12 @@ public class item_3 : MonoBehaviour,IPointerClickHandler
         Player_Item_Equipped.update_item();
         playerchar_withitem.set_resultImg_sprite();
     }
-    void Awake() { itemImage = GetComponent<Image>(); }
     // Start is called before the first frame update
     void Start()
     {
+        if(isvisible_item == true)  green_check.SetActive(true);
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {   
+        itemImage = GetComponent<Image>();
         if(event_inventory.showwhichitems[2] == -1) itemImage.sprite = null;
         else {
             
@@ -56,6 +52,11 @@ public class item_3 : MonoBehaviour,IPointerClickHandler
                 case 5: itemImage.sprite = Resources.Load<Sprite>("6_glasses_3");break;
            }
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   
          if(isvisible_item == false)  green_check.SetActive(false);
     }
 }
