@@ -40,7 +40,7 @@ public class item_6 : MonoBehaviour,IPointerClickHandler
         if(isvisible_item == true)  green_check.SetActive(true);
         
         itemImage = GetComponent<Image>();
-        if(event_inventory.showwhichitems[5] == -1) itemImage.sprite = null;
+        if(event_inventory.showwhichitems[5] == -1) {itemImage.sprite = null; return;}
         else {
             
             switch(event_inventory.showwhichitems[5]){

@@ -41,7 +41,7 @@ public class item_10 : MonoBehaviour,IPointerClickHandler
         if(isvisible_item == true)  green_check.SetActive(true);
         
         itemImage = GetComponent<Image>();
-        if(event_inventory.showwhichitems[9] == -1) itemImage.sprite = null;
+        if(event_inventory.showwhichitems[9] == -1) {itemImage.sprite = null; return;}
         else {
             
             switch(event_inventory.showwhichitems[9]){
@@ -53,7 +53,6 @@ public class item_10 : MonoBehaviour,IPointerClickHandler
                 case 5: itemImage.sprite = Resources.Load<Sprite>("6_glasses_3");break;
             }
         }
-
     }
 
     // Update is called once per frame

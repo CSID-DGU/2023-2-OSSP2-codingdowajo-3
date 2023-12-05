@@ -42,7 +42,7 @@ public class item_1 : MonoBehaviour,IPointerClickHandler
         if(isvisible_item == true)  green_check.SetActive(true);
             
         itemImage = GetComponent<Image>();
-        if(event_inventory.showwhichitems[0] == -1) itemImage.sprite = null;
+        if(event_inventory.showwhichitems[0] == -1) {itemImage.sprite = null; return;}
         else {
             
             switch(event_inventory.showwhichitems[0]){
@@ -53,7 +53,7 @@ public class item_1 : MonoBehaviour,IPointerClickHandler
                 case 4: itemImage.sprite = Resources.Load<Sprite>("5_glasses_2");break; 
                 case 5: itemImage.sprite = Resources.Load<Sprite>("6_glasses_3");break;
             }
-        }     
+        }
     }
     
 
