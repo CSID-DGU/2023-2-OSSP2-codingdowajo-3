@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using OpenQA.Selenium.DevTools.V107.Network;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueSystem_4 : MonoBehaviour
 {
@@ -59,7 +60,8 @@ public class DialogueSystem_4 : MonoBehaviour
         txtSentence.text = string.Empty;
         turtle.enabled = false;
         haema.enabled = false;
-        }
+        SceneManager.LoadScene("MainScene");
+    }
 
     private void change_speaker(int spk_idx) {
             switch(speaker[spk_idx]){
