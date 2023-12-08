@@ -20,15 +20,18 @@ public class testAPI : MonoBehaviour
 
     async Task APItest()
     {
+        double temparature = 0;
+
         var api = new OpenAIClient();
         var messages = new List<Message>
         {
-            new Message(Role.System, "You are a machine that processes the following sentences for DALL·E prompt."),
-            new Message(Role.System, "First, summarize in one sentence. Second, translate into English for DALL·E prompt. The answer is: 10 to 15 words."),
-            new Message(Role.User, "어렸을 때, 수영장에서 물에 빠진 적이 있다. 다리에 쥐가 나서, 도저히 나갈 수가 없었다. 그때의 공포는 아직도 잊혀지지 않는다. 정말 죽을 수도 있다는 느낌이 들었지만, 모르는 아저씨가 달려와서 구해주었다.")
+            new Message(Role.System, "Summarize the sentence in the following form. Place: ,Emotions:, situation:, keywords:"),
+            new Message(Role.System, "Do not answer in Korean, but in English. never use korean."),
+            new Message(Role.System, "The number of characters in answer must be 100 or more and 120 or less."),
+            new Message(Role.User, "Summarize the following sentence in english. 어렸을 때, 수영장에서 물에 빠진 적이 있다. 다리에 쥐가 나서, 도저히 나갈 수가 없었다. 그때의 공포는 아직도 잊혀지지 않는다. 정말 죽을 수도 있다는 느낌이 들었지만, 모르는 아저씨가 달려와서 구해주었다.")
 
         };
-        var chatRequest = new ChatRequest(messages, Model.GPT3_5_Turbo);
+        var chatRequest = new ChatRequest(messages, Model.GPT3_5_Turbo, temperature: temparature);
         var response = await api.ChatEndpoint.GetCompletionAsync(chatRequest);
         var choice = response.FirstChoice;
         Debug.Log($"[{choice.Index}] {choice.Message.Role}: {choice.Message} | Finish Reason: {choice.FinishReason}");
