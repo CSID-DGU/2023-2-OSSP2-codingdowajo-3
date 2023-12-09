@@ -9,6 +9,7 @@ public class btn : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject tutorial_startscene;
+
     void Start()
     {
         
@@ -38,9 +39,8 @@ public class btn : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("FirstRun"))
         {
-            Debug.Log("first run");
+            Debug.Log("first run; start scene");
             tutorial_startscene.SetActive(true);
-            PlayerPrefs.SetInt("FirstRun", 1);
         }
         else
         {
