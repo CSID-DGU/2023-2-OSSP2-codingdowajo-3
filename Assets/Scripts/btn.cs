@@ -45,6 +45,21 @@ public class btn : MonoBehaviour
         else
         {
             MainStart();
+
+            //엔딩씬 테스트********************************************
+            //for (int i = 0; i < PLAYER_CONSTANT.NumOf_BlackHistoryCharacter; i++)
+            //{
+            //    Player_Character.Have_BlackHistoryCharacter[i] = true;
+            //}
+            //Player_Character.UserChar_Level = 20;
+            //***************************************************
+            //결과 : 성공
         }
     }
+
+    public void EndingStart()
+    {
+        SceneManager.LoadScene("EndingScene");
+    }
+
 }
