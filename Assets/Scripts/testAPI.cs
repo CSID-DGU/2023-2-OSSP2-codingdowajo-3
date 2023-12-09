@@ -42,7 +42,7 @@ public class testAPI : MonoBehaviour
 
     async Task DALLEtest()
     {
-        var pythonScriptPath = "C:/Users/user/Desktop/ossp2023_12_06/2023-2-OSSP2-codingdowajo-3/Assets/Scripts/PythonScripts/dalle_test.py"; // Python 스크립트의 경로를 지정하세요.
+        var pythonScriptPath = "C:/1205OPPS/dalle_test.py"; // Python 스크립트의 경로를 지정하세요.
 
         // 프로세스 실행 정보를 설정합니다.
         var processStartInfo = new ProcessStartInfo

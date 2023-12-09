@@ -72,6 +72,7 @@ public class tutorial_startScene : MonoBehaviour
 
     void EndDialogue() 
     {
+        PlayerPrefs.SetInt("FirstRun", 1);
         SceneManager.LoadScene("MainScene");
     }
 
