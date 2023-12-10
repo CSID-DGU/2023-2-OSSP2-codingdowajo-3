@@ -94,7 +94,7 @@ public class DialogueSystem_1 : MonoBehaviour
                 tiger.enabled = true;
                 break;
             case 3:
-                txtName.text = "고래";
+                txtName.text = "호랑이";
                 wolf.enabled = true;
                 bear.enabled = true;
                 tiger.enabled = false;
