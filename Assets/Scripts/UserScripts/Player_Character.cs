@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -82,7 +83,7 @@ public class Player_Character : MonoBehaviour
         /* settings.json 파일 경로 출력문 */
         //Debug.Log("Persistent Data Path: " + Application.persistentDataPath);
     
-         load_settings();    //load json settings
+        load_settings();    //load json settings
         char_img = GetComponent<Image>();
         CurrentLevel.level_and_evolution_update();
     }
@@ -112,6 +113,10 @@ public class Player_Character : MonoBehaviour
         haveitems = loadedSettings.haveitems; //아이템을 가지고 있는가
         BlackHistoryPaper = loadedSettings.BlackHistoryPaper;//흑역사종이개수
 
+
+        //*********************************************************추가-박형준
+        Array.Copy(loadedSettings.Have_BlackHistoryCharacter, Have_BlackHistoryCharacter, Have_BlackHistoryCharacter.Length);//흑역사 캐릭터 도감 소유 리스트
+        //*********************************************************
     }
 
     // json 설정 저장하는 함수
@@ -125,7 +130,10 @@ public class Player_Character : MonoBehaviour
             mySettings.state_of_player_char = state_of_player_char;//장착한아이템
             mySettings.haveitems = haveitems; //아이템을 가지고 있는가
             mySettings.BlackHistoryPaper = BlackHistoryPaper;//흑역사종이개수
-        
+
+        //*********************************************************추가-박형준
+        Array.Copy(Have_BlackHistoryCharacter, mySettings.Have_BlackHistoryCharacter, Have_BlackHistoryCharacter.Length);//흑역사 캐릭터 도감 소유 리스트
+        //*********************************************************
 
         // 설정 저장
         ManageData.SaveSettings(mySettings);
