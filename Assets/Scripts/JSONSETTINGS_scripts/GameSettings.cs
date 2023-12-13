@@ -1,3 +1,5 @@
+using UnityEngine.EventSystems;
+
 [System.Serializable]
 public class GameSettings
 {
@@ -11,5 +13,7 @@ public class GameSettings
 
     public int BlackHistoryPaper = 0;//흑역사종이개수
 
-
+    //***********************************************************************추가
+    public bool[] Have_BlackHistoryCharacter = new bool[PLAYER_CONSTANT.NumOf_BlackHistoryCharacter];
+    //*******************************************************************
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Utilities.Extensions;
 
 public class tutorial_startScene : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class tutorial_startScene : MonoBehaviour
     public Image fadePanel;  // 화면을 어둡게 할 패널
     private int currentIndex = 0;  // 현재 출력 중인 문장의 인덱스
     private bool isTyping = false; // 텍스트 출력 중인지 확인하는 변수
+    public Image askGenderPanel;
 
     List<string> sentences = new List<string>() // 출력할 문구
     {
@@ -40,6 +42,26 @@ public class tutorial_startScene : MonoBehaviour
             }
         }
         
+    }
+
+    
+
+    public void setGender_Male()
+    {
+        Player_Character.gender = 0;
+        GameSettings settings = ManageData.LoadSettings();
+        settings.gender = Player_Character.gender;
+        ManageData.SaveSettings(settings);
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void setGender_Female()
+    {
+        Player_Character.gender = 1;
+        GameSettings settings = ManageData.LoadSettings();
+        settings.gender = Player_Character.gender;
+        ManageData.SaveSettings(settings);
+        SceneManager.LoadScene("MainScene");
     }
 
     public void begin_tutorial()//시놉시스 시작
@@ -73,7 +95,8 @@ public class tutorial_startScene : MonoBehaviour
     void EndDialogue() 
     {
         PlayerPrefs.SetInt("FirstRun", 1);
-        SceneManager.LoadScene("MainScene");
+        askGenderPanel.SetActive(true);
+        //SceneManager.LoadScene("MainScene");
     }
 
     IEnumerator FadeInPanel()//어두워지다가 문장들을 보여준다

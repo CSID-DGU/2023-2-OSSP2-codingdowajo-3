@@ -15,8 +15,12 @@ public class ShopController : MonoBehaviour
     public Image[] ItemList = new Image[itemNum];
 
     public Text pointText;
-    public int point = 100;
+
+    public int point = 100; 
+    
     private int[] purchaseStatus = new int[itemNum];
+
+
 
     /********************JSON 파일 형식**********************************
     * userInfo.json
@@ -26,6 +30,7 @@ public class ShopController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //초기 포인트 세팅
         point = LoadPointFromJSON();
 

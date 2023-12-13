@@ -11,7 +11,7 @@ public class ManageData
         string json = JsonMapper.ToJson(settings);
         File.WriteAllText(settingsPath, json);
     }
-
+        
     public static GameSettings LoadSettings()
     {
         if (File.Exists(settingsPath))
