@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using OpenQA.Selenium.DevTools.V107.Network;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
