@@ -11,7 +11,7 @@ public class ShowShopPoint : MonoBehaviour
     void Start()
     {
         
-       
+       ShopPoint.text = Player_Character.point.ToString();
     }
 
     // Update is called once per frame
