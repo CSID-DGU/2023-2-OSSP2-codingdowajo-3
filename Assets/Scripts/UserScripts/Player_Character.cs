@@ -93,15 +93,6 @@ public class Player_Character : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
-
-
     // json 설정 불러오는 함수
     void load_settings(){
         GameSettings loadedSettings = ManageData.LoadSettings();
