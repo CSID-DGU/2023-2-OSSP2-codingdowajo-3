@@ -16,9 +16,6 @@ public class Purchase : MonoBehaviour
     public void PurchaseItem(int itemIndex)
     {
         //필요한 변수 호출
-        int point = shopController.point;
-        int[] ItemPrice = shopController.ItemPrice;
-        bool[] ItemsPurchased = shopController.ItemsPurchased;
 
         if (itemIndex < 0 || itemIndex >= 6)
         {
@@ -27,24 +24,24 @@ public class Purchase : MonoBehaviour
             return;
         }
 
-        if (!ItemsPurchased[itemIndex])
+        if (!shopController.ItemsPurchased[itemIndex])
         {
-            Debug.Log("현재 포인트: " + point);
-            Debug.Log("아이템가격: " + ItemPrice[itemIndex]);
+            Debug.Log("현재 포인트: " + shopController.point);
+            Debug.Log("아이템가격: " + shopController.ItemPrice[itemIndex]);
 
-            if (point >= ItemPrice[itemIndex])
+            if (shopController.point >= shopController.ItemPrice[itemIndex])
             {
                 Debug.Log("구매성공");
-                point -= ItemPrice[itemIndex];
-                Debug.Log("잔액: " + point);
-                UpdatePointFromJSON(point);
+                shopController.point -= shopController.ItemPrice[itemIndex];
+                Debug.Log("잔액: " + shopController.point);
+                UpdatePointFromJSON(shopController.point);
                 UpdatePurchaseFromJSON(itemIndex);
 
                 if (pointText != null)
                 {
-                    pointText.text = point.ToString();
+                    pointText.text = shopController.point.ToString();
                 }
-                ItemsPurchased[itemIndex] = true;
+                shopController.ItemsPurchased[itemIndex] = true;
 
                 ItemButton = transform.GetComponent<Image>();
                 ItemButton.color = Color.gray;

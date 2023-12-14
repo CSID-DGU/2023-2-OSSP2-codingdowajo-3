@@ -28,10 +28,13 @@ public class Player_Character : MonoBehaviour
 
     public static bool[] haveitems = new bool[numofitems] {
     /*   hat1       hat2       hat3          */
-        true,     true,      true, 
+        false,     false,      false, 
     /*  glasses1   glasses2    glasses3      */
-        true,      true,      true
+        false,      false,      false
     };
+
+    // 플레이어가 현재 가지고 있는 point
+    public static int point = 0;
 
     //소유한 흑역사 캐릭터 - index로 관리; Have_BlackHistoryCharacter[CharacterIndex] = True of False
     public static bool[] Have_BlackHistoryCharacter = new bool[PLAYER_CONSTANT.NumOf_BlackHistoryCharacter];
