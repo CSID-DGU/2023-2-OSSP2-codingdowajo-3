@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.huggingface.api": "https://github.com/huggingface/unity-api.git",
     "com.openai.unity": "7.0.1",
     "com.unity.collab-proxy": "2.0.1",
     "com.unity.feature.2d": "1.0.0",

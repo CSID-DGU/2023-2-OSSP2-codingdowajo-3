@@ -15,17 +15,40 @@ public class ShopController : MonoBehaviour
     public Image[] ItemList = new Image[itemNum];
 
     public Text pointText;
-    public int point = 100;
+
+    public int point = 0; 
+    
     private int[] purchaseStatus = new int[itemNum];
+
+
 
     /********************JSON 파일 형식**********************************
     * userInfo.json
-    * [{"itemList": [0, 0, 0, 0, 0, 0], "point" : 200}]
+    * [{"itemList": [0, 0, 0, 0, 0, 0], "point" : 0}]
     ********************************************************************/
 
     // Start is called before the first frame update
     void Start()
     {
+        string filePath = Application.persistentDataPath + "/userInfo.json";
+        // 파일이 존재하는지 확인
+        if (!File.Exists(filePath))
+        {
+            Dictionary<string, object> data = new Dictionary<string, object>();
+            List<int> itemList = new List<int>();
+            for (int i = 0; i < 6; i++)
+            {
+                itemList.Add(0);
+            }
+            data["itemList"] = itemList;
+            data["point"] = 200;
+
+            string jsonDataString = JsonMapper.ToJson(new List<object> { data });
+
+            File.WriteAllText(filePath, jsonDataString);
+            Debug.Log("JSON 파일이 생성되었습니다: " + filePath);
+        }
+
         //초기 포인트 세팅
         point = LoadPointFromJSON();
 

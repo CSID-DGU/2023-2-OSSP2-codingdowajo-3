@@ -9,6 +9,7 @@ public class btn : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject tutorial_startscene;
+
     void Start()
     {
         
@@ -38,13 +39,27 @@ public class btn : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("FirstRun"))
         {
-            Debug.Log("first run");
+            Debug.Log("first run; start scene");
             tutorial_startscene.SetActive(true);
-            PlayerPrefs.SetInt("FirstRun", 1);
         }
         else
         {
             MainStart();
+
+            //엔딩씬 테스트********************************************
+            //for (int i = 0; i < PLAYER_CONSTANT.NumOf_BlackHistoryCharacter; i++)
+            //{
+            //    Player_Character.Have_BlackHistoryCharacter[i] = true;
+            //}
+            //Player_Character.UserChar_Level = 20;
+            //***************************************************
+            //결과 : 성공
         }
     }
+
+    public void EndingStart()
+    {
+        SceneManager.LoadScene("EndingScene");
+    }
+
 }

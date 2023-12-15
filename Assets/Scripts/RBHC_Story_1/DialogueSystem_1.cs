@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using OpenQA.Selenium.DevTools.V107.Network;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -94,7 +93,7 @@ public class DialogueSystem_1 : MonoBehaviour
                 tiger.enabled = true;
                 break;
             case 3:
-                txtName.text = "°í·¡";
+                txtName.text = "È£¶ûÀÌ";
                 wolf.enabled = true;
                 bear.enabled = true;
                 tiger.enabled = false;

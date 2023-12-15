@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 using OpenAI;
 using OpenAI.Chat;
 using OpenAI.Models;
@@ -14,40 +15,59 @@ public class testAPI : MonoBehaviour
     // Start is called before the first frame update
     async Task Start()
     {
+        UnityEngine.Debug.Log("test1");
         await APItest();
+        UnityEngine.Debug.Log("test2");
         await DALLEtest();
+        UnityEngine.Debug.Log("test3");
     }
 
     async Task APItest()
     {
+        double temparature = 0;
+
         var api = new OpenAIClient();
         var messages = new List<Message>
         {
             new Message(Role.System, "You are a machine that processes the following sentences for DALL·E prompt."),
             new Message(Role.System, "First, summarize in one sentence. Second, translate into English for DALL·E prompt. The answer is: 10 to 15 words."),
-            new Message(Role.User, "어렸을 때, 수영장에서 물에 빠진 적이 있다. 다리에 쥐가 나서, 도저히 나갈 수가 없었다. 그때의 공포는 아직도 잊혀지지 않는다. 정말 죽을 수도 있다는 느낌이 들었지만, 모르는 아저씨가 달려와서 구해주었다.")
-
+            new Message(Role.User, "축제 때, 나는 학과 주점에서 친구들과 술을 마시고 있었다. 분위기가 무르익고, 술에 잔뜩 취해있던 나는 몸을 잘 가누지 못하고 넘어져 상처가 났다. 더욱 부끄러웠던 것은, 그날의 일이 전혀 기억나지 않는다는 점이다. ")
         };
-        var chatRequest = new ChatRequest(messages, Model.GPT3_5_Turbo);
+        var chatRequest = new ChatRequest(messages, Model.GPT3_5_Turbo, temperature: temparature);
         var response = await api.ChatEndpoint.GetCompletionAsync(chatRequest);
         var choice = response.FirstChoice;
-        Debug.Log($"[{choice.Index}] {choice.Message.Role}: {choice.Message} | Finish Reason: {choice.FinishReason}");
+        UnityEngine.Debug.Log($"[{choice.Index}] {choice.Message.Role}: {choice.Message} | Finish Reason: {choice.FinishReason}");
         chresponse = choice.Message;
     }
 
     async Task DALLEtest()
     {
-        var api = new OpenAIClient();
-        var request = new ImageGenerationRequest(chresponse, Model.DallE_3);
-        var imageResults = await api.ImagesEndPoint.GenerateImageAsync(request);
-        var results = imageResults;
+        var pythonScriptPath = "C:/1205OPPS/dalle_test.py"; // Python 스크립트의 경로를 지정하세요.
 
-        foreach (var (path, texture) in results)
+        // 프로세스 실행 정보를 설정합니다.
+        var processStartInfo = new ProcessStartInfo
         {
-            Debug.Log(path);
-            // path == file://path/to/image.png
-            Assert.IsNotNull(texture);
-            // texture == The preloaded Texture2D
+            FileName = "python.exe", // Python 인터프리터의 경로를 지정하세요.
+            Arguments = pythonScriptPath,
+            RedirectStandardInput = true, // 표준 입력을 리디렉션합니다.
+            RedirectStandardOutput = true,
+            UseShellExecute = false,
+            CreateNoWindow = true
+        };
+
+        // 프로세스 실행
+        using (var process = new Process { StartInfo = processStartInfo })
+        {
+            process.Start();
+
+            process.StandardInput.WriteLine(chresponse);
+            process.StandardInput.Flush();
+            process.StandardInput.Close();
+
+            process.WaitForExit();
+
+            string output = await process.StandardOutput.ReadToEndAsync();
+            UnityEngine.Debug.Log("Python Script Output:\n" + output);
         }
     }
 }
