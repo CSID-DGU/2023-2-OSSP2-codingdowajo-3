@@ -41,7 +41,7 @@ public class ShopController : MonoBehaviour
                 itemList.Add(0);
             }
             data["itemList"] = itemList;
-            data["point"] = 200;
+            data["point"] = 0;
 
             string jsonDataString = JsonMapper.ToJson(new List<object> { data });
 
