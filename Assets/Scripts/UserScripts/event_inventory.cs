@@ -10,6 +10,8 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
     
     private const int invensize = 10;
     public static int[] showwhichitems;
+
+    //가지고 있는 아이템들에 대해서 인벤토리에 나열
     private void check_haveitems(){
         for(int i = 0;i<invensize;i++) showwhichitems[i] = -1;
         for(int i = 0, j = 0; i <Player_Character.numofitems;i++){
@@ -17,7 +19,15 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
                 showwhichitems[j++] = i;
             }
         }
-        
+
+        //일단 체크표시 다 비활성화
+        item_1.isvisible_item = false; item_2.isvisible_item = false;
+        item_3.isvisible_item = false; item_4.isvisible_item = false;
+        item_5.isvisible_item = false; item_6.isvisible_item = false;
+        item_7.isvisible_item = false; item_8.isvisible_item = false;
+        item_9.isvisible_item = false; item_10.isvisible_item = false;
+
+        //장착 중인 아이템에 대해서만 활성화
         for(int i = 0; i < invensize; i++){
             if(showwhichitems[i]==Player_Character.state_of_player_char && showwhichitems[i] != -1){
                 switch(i){
