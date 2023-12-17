@@ -1,3 +1,4 @@
+using System;
 using UnityEngine.EventSystems;
 
 [System.Serializable]
@@ -11,7 +12,10 @@ public class GameSettings
 
     //public bool[] haveitems = {true, true, true, true, true, true}; //아이템을 가지고 있는가
 
+    public DateTime lastclick_getpaper = new DateTime(2022, 12, 19, 10, 30, 1);
     public int BlackHistoryPaper = 0;//흑역사종이개수
+
+    
 
     //***********************************************************************추가
     public bool[] Have_BlackHistoryCharacter = new bool[PLAYER_CONSTANT.NumOf_BlackHistoryCharacter];

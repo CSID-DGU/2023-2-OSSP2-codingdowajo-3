@@ -17,8 +17,9 @@ public class event_inventory : MonoBehaviour,IPointerClickHandler
                 showwhichitems[j++] = i;
             }
         }
+        
         for(int i = 0; i < invensize; i++){
-            if(showwhichitems[i]==Player_Character.state_of_player_char){
+            if(showwhichitems[i]==Player_Character.state_of_player_char && showwhichitems[i] != -1){
                 switch(i){
                     case 0: item_1.isvisible_item = true;
                     break;

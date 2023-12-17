@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class item_1 : MonoBehaviour,IPointerClickHandler
 {   public static Image itemImage;
-    public static  bool isvisible_item = false;//초록체크가 보이는지
+    public static  bool isvisible_item = false;
 
     public GameObject green_check;
     public void OnPointerClick(PointerEventData eventData)
@@ -39,8 +39,8 @@ public class item_1 : MonoBehaviour,IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        if(isvisible_item == true)  green_check.SetActive(true);
-            
+        if(isvisible_item) green_check.SetActive(true); else green_check.SetActive(false);
+        
         itemImage = GetComponent<Image>();
         if(event_inventory.showwhichitems[0] == -1) {itemImage.sprite = null; return;}
         else {

@@ -37,7 +37,7 @@ public class item_3 : MonoBehaviour,IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        if(isvisible_item == true)  green_check.SetActive(true);
+        if(isvisible_item) green_check.SetActive(true); else green_check.SetActive(false);
         
         itemImage = GetComponent<Image>();
         if(event_inventory.showwhichitems[2] == -1) {itemImage.sprite = null; return;}

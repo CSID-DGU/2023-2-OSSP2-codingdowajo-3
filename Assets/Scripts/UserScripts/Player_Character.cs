@@ -79,8 +79,14 @@ public class Player_Character : MonoBehaviour
     public static void get_exp(int n) {
         UserChar_Exp += n;
         CurrentLevel.level_and_evolution_update();
+        save_settings();
         }
 
+    /* 흑역사종이 얻을 때 이 함수를 호출 */
+    public static void get_paper(int n) {
+        BlackHistoryPaper += n;
+        save_settings();
+    }
     void Start()
     {   
         /* settings.json 파일 경로 출력문 */
@@ -95,7 +101,8 @@ public class Player_Character : MonoBehaviour
         //save_settings();
     }
 
-
+    /* 흑역사 종이 지급 버튼 마지막 클릭 시간 불러오기 위한 변수 */
+    public static DateTime lastclicktime_getpaperbutton;
     // json 설정 불러오는 함수
     void load_settings(){
         GameSettings loadedSettings = ManageData.LoadSettings();
@@ -106,7 +113,7 @@ public class Player_Character : MonoBehaviour
         state_of_player_char = loadedSettings.state_of_player_char;//장착한아이템
         //haveitems = loadedSettings.haveitems; //아이템을 가지고 있는가
         BlackHistoryPaper = loadedSettings.BlackHistoryPaper;//흑역사종이개수
-
+        lastclicktime_getpaperbutton = loadedSettings.lastclick_getpaper;//흑역사종이지급버튼마지막클릭시간
 
         //*********************************************************추가-박형준
         Array.Copy(loadedSettings.Have_BlackHistoryCharacter, Have_BlackHistoryCharacter, Have_BlackHistoryCharacter.Length);//흑역사 캐릭터 도감 소유 리스트
@@ -114,7 +121,7 @@ public class Player_Character : MonoBehaviour
     }
 
     // json 설정 저장하는 함수
-    void save_settings() {
+    public static void save_settings() {
         // 설정 변경
         GameSettings mySettings = new GameSettings();
         
@@ -124,6 +131,7 @@ public class Player_Character : MonoBehaviour
             mySettings.state_of_player_char = state_of_player_char;//장착한아이템
             //mySettings.haveitems = haveitems; //아이템을 가지고 있는가
             mySettings.BlackHistoryPaper = BlackHistoryPaper;//흑역사종이개수
+            mySettings.lastclick_getpaper = lastclicktime_getpaperbutton;//흑역사종이지급버튼마지막클릭시간
 
         //*********************************************************추가-박형준
         Array.Copy(Have_BlackHistoryCharacter, mySettings.Have_BlackHistoryCharacter, Have_BlackHistoryCharacter.Length);//흑역사 캐릭터 도감 소유 리스트
