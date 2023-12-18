@@ -139,7 +139,7 @@ namespace SimpleCapture
 
                 // 저장.
                 byte[] bytes = screenShot.EncodeToPNG();
-                File.WriteAllBytes(name, bytes);
+                System.IO.File.WriteAllBytes(name, bytes);
 
                 AssetDatabase.Refresh();
             }

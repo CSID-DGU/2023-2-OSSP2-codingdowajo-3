@@ -61,9 +61,9 @@ public class Purchase : MonoBehaviour
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
         int jsonPoint = -1;
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
             jsonPoint = (int)jsonData[0]["point"];
         }
@@ -77,9 +77,9 @@ public class Purchase : MonoBehaviour
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
         int[] items = new int[itemNum];
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
             JsonData itemData = jsonData[0]["itemList"];
             items = new int[itemData.Count];
@@ -99,14 +99,14 @@ public class Purchase : MonoBehaviour
     void UpdatePointFromJSON(int point)
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
             jsonData[0]["point"] = point;
 
             string updatedJsonString = JsonMapper.ToJson(jsonData);
-            File.WriteAllText(filePath, updatedJsonString);
+            System.IO.File.WriteAllText(filePath, updatedJsonString);
         }
         else
         {
@@ -118,14 +118,14 @@ public class Purchase : MonoBehaviour
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
         int[] items = new int[itemNum];
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
             jsonData[0]["itemList"][index] = 1;
 
             string updatedJsonString = JsonMapper.ToJson(jsonData);
-            File.WriteAllText(filePath, updatedJsonString);
+            System.IO.File.WriteAllText(filePath, updatedJsonString);
         }
         else
         {

@@ -46,10 +46,10 @@ public class ScrollViewManager : MonoBehaviour
         string jsonFilePath = Application.persistentDataPath + "/diary.json";
         // diary.json이 있는지 확인
         // 파일이 존재하는지 확인
-        if (!File.Exists(jsonFilePath))
+        if (!System.IO.File.Exists(jsonFilePath))
         {
             // 새로운 JSON 파일 생성
-            using (StreamWriter writer = File.CreateText(jsonFilePath))
+            using (StreamWriter writer = System.IO.File.CreateText(jsonFilePath))
             {
                 writer.Write("[]"); // 빈 배열로 초기화
             }
@@ -90,9 +90,9 @@ public class ScrollViewManager : MonoBehaviour
 
     void LoadDataFromJSON(string filePath)
     {
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
 
             for (int i = 0; i < jsonData.Count; i++)
@@ -112,13 +112,13 @@ public class ScrollViewManager : MonoBehaviour
 
     Texture2D LoadImage(string filePath)
     {
-        if (!File.Exists(filePath))
+        if (!System.IO.File.Exists(filePath))
         {
             Debug.LogError($"File does not exist at path: {filePath}");
             return null;
         }
 
-        byte[] bytes = File.ReadAllBytes(filePath); // 파일에서 바이트 배열 읽기
+        byte[] bytes = System.IO.File.ReadAllBytes(filePath); // 파일에서 바이트 배열 읽기
 
         Texture2D texture = new Texture2D(1, 1);
         if (!texture.LoadImage(bytes))
@@ -154,17 +154,17 @@ public class ScrollViewManager : MonoBehaviour
         string jsonFilePath = Application.persistentDataPath + "/diary.json";
 
         // 파일이 존재하는지 확인
-        if (!File.Exists(jsonFilePath))
+        if (!System.IO.File.Exists(jsonFilePath))
         {
             // 새로운 JSON 파일 생성
-            using (StreamWriter writer = File.CreateText(jsonFilePath))
+            using (StreamWriter writer = System.IO.File.CreateText(jsonFilePath))
             {
                 writer.Write("[]"); // 빈 배열로 초기화
             }
         }
 
         // 기존 데이터 로드
-        string jsonString = File.ReadAllText(jsonFilePath);
+        string jsonString = System.IO.File.ReadAllText(jsonFilePath);
         JsonData jsonData = JsonMapper.ToObject(jsonString);
 
         // 새로운 데이터 생성
@@ -177,6 +177,6 @@ public class ScrollViewManager : MonoBehaviour
 
         // 새로운 JSON 파일로 저장
         string newJsonString = JsonMapper.ToJson(jsonData);
-        File.WriteAllText(jsonFilePath, newJsonString);
+        System.IO.File.WriteAllText(jsonFilePath, newJsonString);
     }
 }

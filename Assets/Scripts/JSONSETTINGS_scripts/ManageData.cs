@@ -9,14 +9,14 @@ public class ManageData
     public static void SaveSettings(GameSettings settings)
     {
         string json = JsonMapper.ToJson(settings);
-        File.WriteAllText(settingsPath, json);
+        System.IO.File.WriteAllText(settingsPath, json);
     }
         
     public static GameSettings LoadSettings()
     {
-        if (File.Exists(settingsPath))
+        if (System.IO.File.Exists(settingsPath))
         {
-            string json = File.ReadAllText(settingsPath);
+            string json = System.IO.File.ReadAllText(settingsPath);
             return JsonMapper.ToObject<GameSettings>(json);
         }
         else

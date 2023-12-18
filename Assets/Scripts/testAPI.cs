@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Diagnostics;
+using UnityEngine.Networking;
+using System.IO;
+using System;
+using UnityEngine.UI;
+using System.Threading.Tasks;
 using OpenAI;
 using OpenAI.Chat;
 using OpenAI.Models;
-using System.Threading.Tasks;
-using OpenAI.Images;
-using NUnit.Framework;
+using LitJson;
+using TMPro;
 
-public class testAPI : MonoBehaviour
+public class TestAPI : MonoBehaviour
 {
     public string chresponse;
-    // Start is called before the first frame update
-    async Task Start()
-    {
-        UnityEngine.Debug.Log("test1");
-        await APItest();
-        UnityEngine.Debug.Log("test2");
-        await DALLEtest();
-        UnityEngine.Debug.Log("test3");
-    }
+    public const int textLength = 200;
 
-    async Task APItest()
+    // 이미지를 저장할 경로
+    private const string outputPath = "Assets/Diary/";
+
+    // DALL-E에 보낼 텍스트
+    private const string prompt = "";
+
+    public async Task GPTapi(string userPrompt)
     {
         double temparature = 0;
 
@@ -31,7 +32,7 @@ public class testAPI : MonoBehaviour
         {
             new Message(Role.System, "You are a machine that processes the following sentences for DALL·E prompt."),
             new Message(Role.System, "First, summarize in one sentence. Second, translate into English for DALL·E prompt. The answer is: 10 to 15 words."),
-            new Message(Role.User, "축제 때, 나는 학과 주점에서 친구들과 술을 마시고 있었다. 분위기가 무르익고, 술에 잔뜩 취해있던 나는 몸을 잘 가누지 못하고 넘어져 상처가 났다. 더욱 부끄러웠던 것은, 그날의 일이 전혀 기억나지 않는다는 점이다. ")
+            new Message(Role.User, userPrompt)
         };
         var chatRequest = new ChatRequest(messages, Model.GPT3_5_Turbo, temperature: temparature);
         var response = await api.ChatEndpoint.GetCompletionAsync(chatRequest);
@@ -40,34 +41,105 @@ public class testAPI : MonoBehaviour
         chresponse = choice.Message;
     }
 
-    async Task DALLEtest()
+    public IEnumerator DALLEapi(string fileName, Image uiImage)
     {
-        var pythonScriptPath = "C:/1205OPPS/dalle_test.py"; // Python 스크립트의 경로를 지정하세요.
+        // dalle api용
+        yield return new WaitForSeconds(1.0f); // 1초의 딜레이
 
-        // 프로세스 실행 정보를 설정합니다.
-        var processStartInfo = new ProcessStartInfo
+        string openaiApiKey = "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";
+        string apiUrl = "https://api.openai.com/v1/images/generations";
+        string contentValue = "error";
+        contentValue = chresponse;
+        Debug.Log(contentValue);
+
+        var jsonObject = new Dictionary<string, object>
         {
-            FileName = "python.exe", // Python 인터프리터의 경로를 지정하세요.
-            Arguments = pythonScriptPath,
-            RedirectStandardInput = true, // 표준 입력을 리디렉션합니다.
-            RedirectStandardOutput = true,
-            UseShellExecute = false,
-            CreateNoWindow = true
+            { "model", "dall-e-3" },
+            { "prompt", contentValue },
+            { "n", 1 },
+            { "size", "1024x1024" },
+            { "quality", "standard" }
         };
 
-        // 프로세스 실행
-        using (var process = new Process { StartInfo = processStartInfo })
+        // 리스트를 JSON 문자열로 직렬화
+        string jsonData = JsonMapper.ToJson(jsonObject);
+
+
+        // UnityWebRequest로 POST 요청 보내기
+        using (UnityWebRequest request = new UnityWebRequest(apiUrl, "POST"))
         {
-            process.Start();
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.SetRequestHeader("Authorization", "Bearer " + openaiApiKey);
 
-            process.StandardInput.WriteLine(chresponse);
-            process.StandardInput.Flush();
-            process.StandardInput.Close();
+            yield return request.SendWebRequest();
 
-            process.WaitForExit();
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + request.error);
+            }
+            else
+            {
+                Debug.Log("Request successful!");
+                string responseText = request.downloadHandler.text;
+                Debug.Log(responseText);
+                JsonData response = JsonMapper.ToObject(responseText);
+                string imageUrl = response["data"][0]["url"].ToString();
+                string imagePath = outputPath + fileName + ".jpg";
 
-            string output = await process.StandardOutput.ReadToEndAsync();
-            UnityEngine.Debug.Log("Python Script Output:\n" + output);
+                // 이미지 다운로드 및 저장
+                yield return StartCoroutine(DownloadImage(imageUrl, imagePath, uiImage));
+
+                UnityEngine.Debug.Log("Image generation completed. Image saved to: " + imagePath);
+                Debug.Log("Response: " + responseText); // 응답 데이터 출력
+                // Handle the response here
+            }
         }
     }
+
+    public IEnumerator DownloadImage(string url, string filePath,Image uiImage)
+    {
+        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(url))
+        {
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Texture2D texture = DownloadHandlerTexture.GetContent(request);
+
+                // UI Image에 할당
+                uiImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+
+                byte[] bytes = texture.EncodeToJPG();
+
+                System.IO.File.WriteAllBytes(filePath, bytes);
+            }
+            else
+            {
+                UnityEngine.Debug.LogError("Image download failed: " + request.error);
+            }
+        }
+    }
+
+
+}
+
+[System.Serializable]
+public class ImageResponse
+{
+    public Choice[] choices;
+}
+
+[System.Serializable]
+public class Choice
+{
+    public File file;
+}
+
+[System.Serializable]
+public class File
+{
+    public string url;
 }
