@@ -7,7 +7,7 @@
 emdr 기법을 사용한 흑역사 회고 후 경험치를 받아 캐릭터를 성장시키는 성장형 힐링 게임
 
 
-### emdr 기법이란?
+### EMDR 기법이란?
 EMDR 치료에서는 트라우마 기억과 관련한 적응적으로 처리되지 못한 관련 정보(이미지, 감정, 생각, 신체감각)들을 떠올리면서 동시에 안구운동과 같은 양측성 자극을 주어, 트라우마 당시 처리되지 못한 정보의 처리를 다시 할 수 있도록 돕는다.
 <div align=center>
   <img height="223" src="https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/33b09c46-85db-4dc3-80f0-09cf219ec0d8"/>
@@ -66,7 +66,7 @@ EMDR 치료에서는 트라우마 기억과 관련한 적응적으로 처리되�
 
 <img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/cfb01949-4248-4cda-a028-1163f3c1dce0"/>
 
-- 도감 전부 수집, 게임 레벨 만렙 달성시에 보이는 엔딩
+- 도감 전부 수집, 게임의 최종 레벨 달성시에 보이는 엔딩
 
 ### 2. 회고
 <img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/121a7d26-cc81-423b-b9e9-077c98beee17"/>
