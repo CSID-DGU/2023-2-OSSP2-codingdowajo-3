@@ -32,7 +32,7 @@ public class ShopController : MonoBehaviour
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
         // 파일이 존재하는지 확인
-        if (!File.Exists(filePath))
+        if (!System.IO.File.Exists(filePath))
         {
             Dictionary<string, object> data = new Dictionary<string, object>();
             List<int> itemList = new List<int>();
@@ -45,7 +45,7 @@ public class ShopController : MonoBehaviour
 
             string jsonDataString = JsonMapper.ToJson(new List<object> { data });
 
-            File.WriteAllText(filePath, jsonDataString);
+            System.IO.File.WriteAllText(filePath, jsonDataString);
             Debug.Log("JSON 파일이 생성되었습니다: " + filePath);
         }
 
@@ -137,9 +137,9 @@ public class ShopController : MonoBehaviour
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
         int jsonPoint = -1;
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
             jsonPoint = (int)jsonData[0]["point"];
         }
@@ -154,9 +154,9 @@ public class ShopController : MonoBehaviour
     {
         string filePath = Application.persistentDataPath + "/userInfo.json";
         int[] items = new int[itemNum];
-        if (File.Exists(filePath))
+        if (System.IO.File.Exists(filePath))
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = System.IO.File.ReadAllText(filePath);
             JsonData jsonData = JsonMapper.ToObject(jsonString);
             JsonData itemData = jsonData[0]["itemList"];
             items = new int[itemData.Count];

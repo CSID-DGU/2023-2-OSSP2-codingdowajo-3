@@ -22,7 +22,14 @@ public class btn : MonoBehaviour
     }
     public void ReviewStart()
     {
-        SceneManager.LoadScene("ReviewScene");
+        if (Player_Character.BlackHistoryPaper < 1)
+        {
+            Debug.Log("There is no Black History Paper");
+        }
+        else
+        {
+            SceneManager.LoadScene("ReviewScene");
+        }
     }
 
     public void StoryStart()

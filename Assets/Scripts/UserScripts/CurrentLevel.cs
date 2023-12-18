@@ -14,7 +14,8 @@ public class CurrentLevel : MonoBehaviour
         if(Player_Character.UserChar_Level == 20 && 
         Player_Character.evolution_2 == true) { 
              lv_text.text = Player_Character.UserChar_Level.ToString();
-             Exp_Bar_Width.width_update();
+            Player_Character.update_appearance();
+            Exp_Bar_Width.width_update();
              return;
              }
 
