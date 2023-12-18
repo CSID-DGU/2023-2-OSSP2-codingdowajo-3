@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#if UNITY_EDITOR
 using static UnityEditor.Progress;
+#endif
 
 //도감창 안 슬롯에 흑역사 캐릭터 띄워주기
 public class Slot_Character : MonoBehaviour
