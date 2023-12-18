@@ -4,7 +4,15 @@
 #### 흑역사를 잊고 싶은 사람들을 위한 힐링 게임:
 
 ### '기억의 바다'🌊
-> 흑역사 회고 후 경험치를 받아 캐릭터를 성장시키는 성장형 힐링 게임
+emdr 기법을 사용한 흑역사 회고 후 경험치를 받아 캐릭터를 성장시키는 성장형 힐링 게임
+
+
+### emdr 기법이란?
+EMDR 치료에서는 트라우마 기억과 관련한 적응적으로 처리되지 못한 관련 정보(이미지, 감정, 생각, 신체감각)들을 떠올리면서 동시에 안구운동과 같은 양측성 자극을 주어, 트라우마 당시 처리되지 못한 정보의 처리를 다시 할 수 있도록 돕는다.
+<div align=center>
+  <img height="223" src="https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/33b09c46-85db-4dc3-80f0-09cf219ec0d8"/>
+</div>
+
 ----------------------------
 
 ## 🙋‍♂️ 팀원 소개
@@ -62,9 +70,11 @@
 
 ### 2. 회고
 <img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/121a7d26-cc81-423b-b9e9-077c98beee17"/>
-<img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/d5fd7b02-22e0-4803-995d-27a502a050ed"/>
+<img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/1ff7ff3c-2ecb-40a9-b01f-b019ab3950a6"/>
+<img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/f3086326-e7cb-4a93-9ef7-fd7ede2f4925"/>
 
-- 자신의 흑역사 작성시 이를 이미지로 만들어 준다.
+- 흑역사 내용 작성 및 emdr 설명을 통해 사용자가 emdr 치료를 할 수 있도록 돕기
+- 흑역사 작성 내용을 기반으로 한 이미지 생성 및 해당 이미지를 바다에 던지는 애니메이션 출력
 - 회고시 일정 포인트와 경험치 지급
 
 ### 3. 상점
