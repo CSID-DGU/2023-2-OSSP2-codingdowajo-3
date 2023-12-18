@@ -23,6 +23,7 @@ public class ReviewScriptManager : MonoBehaviour
 {
     public string fileName;
     public string userInput;
+    public string userpmt;
 
     public int count = 0;
 
@@ -107,15 +108,16 @@ public class ReviewScriptManager : MonoBehaviour
     }
     void SaveUserPromptAsJson(string userPrompt, string fileName)
     {
-        DiaryData diaryData = new DiaryData(userPrompt);
+        userpmt = userPrompt;
+        //DiaryData diaryData = new DiaryData(userPrompt);
 
-        string jsonFilePath = Path.Combine(outputPath, fileName + ".json");
+        //string jsonFilePath = Path.Combine(outputPath, fileName + ".json");
 
         // JSON으로 데이터 변환 (litJson 사용)
-        JsonData diaryJson = JsonMapper.ToJson(diaryData);
+        //JsonData diaryJson = JsonMapper.ToJson(diaryData);
 
         // JSON 파일 저장
-        System.IO.File.WriteAllText(jsonFilePath, diaryJson.ToString());
+        //System.IO.File.WriteAllText(jsonFilePath, diaryJson.ToString());
 
     }
 
@@ -125,7 +127,8 @@ public class ReviewScriptManager : MonoBehaviour
         count++;
 
         userInput = userInputField.text;
-        SaveUserPromptAsJson(userInput, fileName);
+        //SaveUserPromptAsJson(userInput, fileName);
+        userpmt = userInput;
         TestAPI testAPI = gameObject.AddComponent<TestAPI>();
 
         await testAPI.GPTapi(userInput);
@@ -135,7 +138,7 @@ public class ReviewScriptManager : MonoBehaviour
         ShowReviewImage();
         UnityEngine.Debug.Log("test2");
 
-        StartCoroutine(testAPI.DALLEapi(fileName, uiImage));
+        StartCoroutine(testAPI.DALLEapi(fileName, uiImage, userpmt));
         UnityEngine.Debug.Log("test3");
 
     }

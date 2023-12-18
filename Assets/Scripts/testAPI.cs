@@ -41,12 +41,12 @@ public class TestAPI : MonoBehaviour
         chresponse = choice.Message;
     }
 
-    public IEnumerator DALLEapi(string fileName, Image uiImage)
+    public IEnumerator DALLEapi(string fileName, Image uiImage, string userpmt)
     {
         // dalle api용
         yield return new WaitForSeconds(1.0f); // 1초의 딜레이
 
-        string openaiApiKey = "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";
+        string openaiApiKey = "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";
         string apiUrl = "https://api.openai.com/v1/images/generations";
         string contentValue = "error";
         contentValue = chresponse;
@@ -87,10 +87,13 @@ public class TestAPI : MonoBehaviour
                 Debug.Log(responseText);
                 JsonData response = JsonMapper.ToObject(responseText);
                 string imageUrl = response["data"][0]["url"].ToString();
-                string imagePath = outputPath + fileName + ".jpg";
+                string imagePath = Application.persistentDataPath + '/' + fileName + ".jpg";
 
                 // 이미지 다운로드 및 저장
                 yield return StartCoroutine(DownloadImage(imageUrl, imagePath, uiImage));
+
+                //json 파일에 이미지 경로 및 userpmt 저장
+                AddDataToJson(userpmt, imagePath);
 
                 UnityEngine.Debug.Log("Image generation completed. Image saved to: " + imagePath);
                 Debug.Log("Response: " + responseText); // 응답 데이터 출력
@@ -121,6 +124,36 @@ public class TestAPI : MonoBehaviour
                 UnityEngine.Debug.LogError("Image download failed: " + request.error);
             }
         }
+    }
+    void AddDataToJson(string text, string imagePath)
+    {
+        string jsonFilePath = Application.persistentDataPath + "/diary.json";
+
+        // 파일이 존재하는지 확인
+        if (!System.IO.File.Exists(jsonFilePath))
+        {
+            // 새로운 JSON 파일 생성
+            using (StreamWriter writer = System.IO.File.CreateText(jsonFilePath))
+            {
+                writer.Write("[]"); // 빈 배열로 초기화
+            }
+        }
+
+        // 기존 데이터 로드
+        string jsonString = System.IO.File.ReadAllText(jsonFilePath);
+        JsonData jsonData = JsonMapper.ToObject(jsonString);
+
+        // 새로운 데이터 생성
+        JsonData newData = new JsonData();
+        newData["diarytext"] = text;
+        newData["diaryimage"] = imagePath;
+
+        // JSON 데이터에 새로운 데이터 추가
+        jsonData.Add(newData);
+
+        // 새로운 JSON 파일로 저장
+        string newJsonString = JsonMapper.ToJson(jsonData);
+        System.IO.File.WriteAllText(jsonFilePath, newJsonString);
     }
 
 
