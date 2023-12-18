@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class ShopController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class ShopController : MonoBehaviour
 
     public Text pointText;
 
-    public int point = 0; 
+    public int point = Player_Character.point; 
     
     private int[] purchaseStatus = new int[itemNum];
 
@@ -173,4 +174,8 @@ public class ShopController : MonoBehaviour
         return items;
     }
     
+    public void backbtn()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
 }
