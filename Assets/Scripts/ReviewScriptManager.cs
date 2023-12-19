@@ -56,6 +56,12 @@ public class ReviewScriptManager : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(720, 1280, true);
+    }
+
     // Called when the script instance is being loaded
     void OnEnable()
     {
@@ -156,10 +162,46 @@ public class ReviewScriptManager : MonoBehaviour
 
         int randomPoint = UnityEngine.Random.Range(700, 800);
         Player_Character.UserChar_Exp += 70;
-        Player_Character.point += randomPoint;
+        pointSave(randomPoint);
         pointText.text = "포인트 +" + randomPoint.ToString();
 
         endPanel.SetActive(true);
+
+    }
+
+    void pointSave(int addpoint)
+    {
+        int jsonPoint = 0;
+
+        string filePath = Application.persistentDataPath + "/userInfo.json";
+        // 파일이 존재하는지 확인
+        if (!System.IO.File.Exists(filePath))
+        {
+            Dictionary<string, object> data = new Dictionary<string, object>();
+            List<int> itemList = new List<int>();
+            for (int i = 0; i < 6; i++)
+            {
+                itemList.Add(0);
+            }
+            data["itemList"] = itemList;
+            data["point"] = 0;
+
+            string jsonDataString = JsonMapper.ToJson(new List<object> { data });
+
+            System.IO.File.WriteAllText(filePath, jsonDataString);
+            Debug.Log("JSON 파일이 생성되었습니다: " + filePath);
+        }
+        else
+        {
+            string jsonString = System.IO.File.ReadAllText(filePath);
+            JsonData jsonData = JsonMapper.ToObject(jsonString);
+            jsonPoint = (int)jsonData[0]["point"];
+            jsonPoint += addpoint;
+            jsonData[0]["point"] = jsonPoint;
+
+            string updatedJsonString = JsonMapper.ToJson(jsonData);
+            System.IO.File.WriteAllText(filePath, updatedJsonString);
+        }
 
     }
 

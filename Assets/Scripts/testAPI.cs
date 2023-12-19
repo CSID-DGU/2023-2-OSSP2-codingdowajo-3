@@ -46,7 +46,7 @@ public class TestAPI : MonoBehaviour
         // dalle api용
         yield return new WaitForSeconds(1.0f); // 1초의 딜레이
 
-        string openaiApiKey = "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";
+        string openaiApiKey = "apikey";
         string apiUrl = "https://api.openai.com/v1/images/generations";
         string contentValue = "error";
         contentValue = chresponse;

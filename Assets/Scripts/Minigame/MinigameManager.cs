@@ -22,6 +22,8 @@ public class MinigameManager : MonoBehaviour
     void Awake()
     {
         I = this;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(720, 1280, true);
     }
 
     // Start is called before the first frame update

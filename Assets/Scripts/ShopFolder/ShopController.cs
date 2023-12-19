@@ -22,6 +22,11 @@ public class ShopController : MonoBehaviour
     private int[] purchaseStatus = new int[itemNum];
 
 
+    private void Awake()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(720, 1280, true);
+    }
 
     /********************JSON 파일 형식**********************************
     * userInfo.json
