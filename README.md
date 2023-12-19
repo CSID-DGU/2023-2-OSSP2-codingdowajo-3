@@ -122,3 +122,6 @@ EMDR 치료에서는 트라우마 기억과 관련한 적응적으로 처리되�
 <img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/9d0bc4ca-a57a-4f39-8cfa-2a83b74302f7"/>
 
 - 회고로 경험치 획득 후 일정 레벨 도달 시 캐릭터 진화(외형 변화(옷, 표정))
+
+
+https://drive.google.com/drive/folders/16iNxNs2SouvNWcj8OVeqlNR4zX0k6_rJ?usp=sharing
