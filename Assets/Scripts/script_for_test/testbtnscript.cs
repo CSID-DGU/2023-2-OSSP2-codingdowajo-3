@@ -15,6 +15,7 @@ public class testbtnscript : MonoBehaviour
     if(Player_Character.gender == 1) Player_Character.gender = 0;
     else Player_Character.gender = 1;
     Player_Character.update_appearance();
+    Player_Character.save_settings();
 }
 
  public void setzerobtn()

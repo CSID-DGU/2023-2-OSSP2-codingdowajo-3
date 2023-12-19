@@ -111,6 +111,7 @@ public class Player_Character : MonoBehaviour
         UserChar_Level = loadedSettings.level;//레벨
         UserChar_Exp = loadedSettings.exp;//경험치
         state_of_player_char = loadedSettings.state_of_player_char;//장착한아이템
+        if(state_of_player_char != -1 && !haveitems[state_of_player_char]) state_of_player_char = -1;
         //haveitems = loadedSettings.haveitems; //아이템을 가지고 있는가
         BlackHistoryPaper = loadedSettings.BlackHistoryPaper;//흑역사종이개수
         lastclicktime_getpaperbutton = loadedSettings.lastclick_getpaper;//흑역사종이지급버튼마지막클릭시간
