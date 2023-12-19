@@ -6,6 +6,9 @@
 ### '기억의 바다'🌊
 emdr 기법을 사용한 흑역사 회고 후 경험치를 받아 캐릭터를 성장시키는 성장형 힐링 게임
 
+### apk 링크
+https://drive.google.com/drive/folders/16iNxNs2SouvNWcj8OVeqlNR4zX0k6_rJ?usp=sharing
+
 
 ### EMDR 기법이란?
 EMDR 치료에서는 트라우마 기억과 관련한 적응적으로 처리되지 못한 관련 정보(이미지, 감정, 생각, 신체감각)들을 떠올리면서 동시에 안구운동과 같은 양측성 자극을 주어, 트라우마 당시 처리되지 못한 정보의 처리를 다시 할 수 있도록 돕는다.
@@ -122,6 +125,3 @@ EMDR 치료에서는 트라우마 기억과 관련한 적응적으로 처리되�
 <img  width="223" src = "https://github.com/CSID-DGU/2023-2-OSSP2-codingdowajo-3/assets/111339008/9d0bc4ca-a57a-4f39-8cfa-2a83b74302f7"/>
 
 - 회고로 경험치 획득 후 일정 레벨 도달 시 캐릭터 진화(외형 변화(옷, 표정))
-
-
-https://drive.google.com/drive/folders/16iNxNs2SouvNWcj8OVeqlNR4zX0k6_rJ?usp=sharing
