@@ -21,6 +21,11 @@ public class endingSceneDialogue : MonoBehaviour
         "지금까지 저희 게임을 플레이해주셔서 감사합니다!\n-공개SW프로젝트 3조 코딩도와조-"
     };
 
+    private void Awake()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Screen.SetResolution(720, 1280, true);
+    }
     private void Start()
     {
         begin_tutorial();//시놉시스 시작

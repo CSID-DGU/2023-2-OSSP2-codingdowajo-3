@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: OpenAIConfiguration
   m_EditorClassIdentifier: 
   apiKey: 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
+  apiKey: 
   organizationId: 
   useAzureOpenAI: 0
   proxyDomain: 
