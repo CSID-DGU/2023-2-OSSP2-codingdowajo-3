@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 107170557}
   - component: {fileID: 107170556}
   - component: {fileID: 107170555}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 144176035}
   - component: {fileID: 144176034}
   - component: {fileID: 144176037}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: storyBtn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 152912762}
   - component: {fileID: 152912763}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NomalCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 161251255}
   - component: {fileID: 161251254}
   - component: {fileID: 161251253}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rare slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1661,7 +1661,7 @@ GameObject:
   - component: {fileID: 214953911}
   - component: {fileID: 214953910}
   - component: {fileID: 214953909}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 233596887}
   - component: {fileID: 233596886}
   - component: {fileID: 233596885}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 291847420}
   - component: {fileID: 291847419}
   - component: {fileID: 291847418}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2229,7 +2229,7 @@ GameObject:
   - component: {fileID: 319036049}
   - component: {fileID: 319036048}
   - component: {fileID: 319036047}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GoStoryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2460,7 +2460,7 @@ GameObject:
   - component: {fileID: 324456482}
   - component: {fileID: 324456481}
   - component: {fileID: 324456480}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2558,7 +2558,7 @@ GameObject:
   - component: {fileID: 332683254}
   - component: {fileID: 332683253}
   - component: {fileID: 332683252}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2649,7 +2649,7 @@ GameObject:
   - component: {fileID: 333367998}
   - component: {fileID: 333367997}
   - component: {fileID: 333367996}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2827,7 +2827,7 @@ GameObject:
   - component: {fileID: 345831945}
   - component: {fileID: 345831944}
   - component: {fileID: 345831943}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2918,7 +2918,7 @@ GameObject:
   - component: {fileID: 346535117}
   - component: {fileID: 346535116}
   - component: {fileID: 346535115}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3350,7 +3350,7 @@ GameObject:
   - component: {fileID: 376915594}
   - component: {fileID: 376915593}
   - component: {fileID: 376915592}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4240,7 +4240,7 @@ GameObject:
   - component: {fileID: 476111082}
   - component: {fileID: 476111081}
   - component: {fileID: 476111080}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4407,7 +4407,7 @@ GameObject:
   - component: {fileID: 523267638}
   - component: {fileID: 523267637}
   - component: {fileID: 523267636}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4505,7 +4505,7 @@ GameObject:
   - component: {fileID: 523950163}
   - component: {fileID: 523950162}
   - component: {fileID: 523950161}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4594,7 +4594,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &528572242
 GameObject:
@@ -5368,7 +5368,7 @@ GameObject:
   - component: {fileID: 609308509}
   - component: {fileID: 609308508}
   - component: {fileID: 609308507}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5798,7 +5798,7 @@ GameObject:
   - component: {fileID: 667675814}
   - component: {fileID: 667675813}
   - component: {fileID: 667675812}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6503,7 +6503,7 @@ GameObject:
   - component: {fileID: 757542391}
   - component: {fileID: 757542390}
   - component: {fileID: 757542389}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GoStoryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7048,7 +7048,7 @@ GameObject:
   - component: {fileID: 784750126}
   - component: {fileID: 784750125}
   - component: {fileID: 784750124}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7215,7 +7215,7 @@ GameObject:
   - component: {fileID: 800773117}
   - component: {fileID: 800773116}
   - component: {fileID: 800773115}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7468,7 +7468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823864295}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: modal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7509,7 +7509,7 @@ GameObject:
   - component: {fileID: 826911808}
   - component: {fileID: 826911807}
   - component: {fileID: 826911806}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7607,7 +7607,7 @@ GameObject:
   - component: {fileID: 830428890}
   - component: {fileID: 830428889}
   - component: {fileID: 830428888}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8589,7 +8589,7 @@ GameObject:
   - component: {fileID: 885624013}
   - component: {fileID: 885624015}
   - component: {fileID: 885624014}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8965,7 +8965,7 @@ GameObject:
   - component: {fileID: 916204730}
   - component: {fileID: 916204732}
   - component: {fileID: 916204731}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9135,13 +9135,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920633076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 117.31945, y: 55.863575, z: -2.9810364}
+  m_LocalPosition: {x: 117.31945, y: 55.863575, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 346535114}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921077482
 GameObject:
@@ -9155,7 +9155,7 @@ GameObject:
   - component: {fileID: 921077486}
   - component: {fileID: 921077485}
   - component: {fileID: 921077484}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9278,7 +9278,7 @@ GameObject:
   - component: {fileID: 940373027}
   - component: {fileID: 940373026}
   - component: {fileID: 940373025}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9477,7 +9477,7 @@ GameObject:
   - component: {fileID: 969907993}
   - component: {fileID: 969907992}
   - component: {fileID: 969907991}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9781,7 +9781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da641f3f8826c004eab2443237e811fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chresponse: 
 --- !u!1 &1011008680
 GameObject:
   m_ObjectHideFlags: 0
@@ -9990,7 +9989,7 @@ GameObject:
   - component: {fileID: 1023265209}
   - component: {fileID: 1023265208}
   - component: {fileID: 1023265207}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rare slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10108,7 +10107,7 @@ Transform:
   m_Children:
   - {fileID: 523950160}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1051248315
 GameObject:
@@ -10412,7 +10411,7 @@ GameObject:
   - component: {fileID: 1086697575}
   - component: {fileID: 1086697574}
   - component: {fileID: 1086697573}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10663,7 +10662,7 @@ GameObject:
   - component: {fileID: 1117376004}
   - component: {fileID: 1117376003}
   - component: {fileID: 1117376006}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: storyBtn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10841,7 +10840,7 @@ GameObject:
   - component: {fileID: 1137134860}
   - component: {fileID: 1137134859}
   - component: {fileID: 1137134858}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10932,7 +10931,7 @@ GameObject:
   - component: {fileID: 1165151393}
   - component: {fileID: 1165151392}
   - component: {fileID: 1165151391}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11023,7 +11022,7 @@ GameObject:
   - component: {fileID: 1179514918}
   - component: {fileID: 1179514917}
   - component: {fileID: 1179514916}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rare slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11123,7 +11122,7 @@ GameObject:
   - component: {fileID: 1181636962}
   - component: {fileID: 1181636961}
   - component: {fileID: 1181636960}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11220,7 +11219,7 @@ GameObject:
   - component: {fileID: 1187346314}
   - component: {fileID: 1187346316}
   - component: {fileID: 1187346317}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11301,7 +11300,7 @@ GameObject:
   - component: {fileID: 1189298333}
   - component: {fileID: 1189298332}
   - component: {fileID: 1189298331}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11468,7 +11467,7 @@ GameObject:
   - component: {fileID: 1218692833}
   - component: {fileID: 1218692832}
   - component: {fileID: 1218692831}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11633,7 +11632,7 @@ GameObject:
   - component: {fileID: 1228522242}
   - component: {fileID: 1228522241}
   - component: {fileID: 1228522244}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: storyBtn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12022,7 +12021,7 @@ GameObject:
   - component: {fileID: 1241848605}
   - component: {fileID: 1241848604}
   - component: {fileID: 1241848603}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12113,7 +12112,7 @@ GameObject:
   - component: {fileID: 1246509917}
   - component: {fileID: 1246509916}
   - component: {fileID: 1246509915}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12338,7 +12337,7 @@ GameObject:
   - component: {fileID: 1268257091}
   - component: {fileID: 1268257090}
   - component: {fileID: 1268257089}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12520,7 +12519,7 @@ GameObject:
   - component: {fileID: 1279935724}
   - component: {fileID: 1279935723}
   - component: {fileID: 1279935722}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12611,7 +12610,7 @@ GameObject:
   - component: {fileID: 1285908893}
   - component: {fileID: 1285908892}
   - component: {fileID: 1285908891}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12702,7 +12701,7 @@ GameObject:
   - component: {fileID: 1287861355}
   - component: {fileID: 1287861354}
   - component: {fileID: 1287861353}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12799,7 +12798,7 @@ GameObject:
   - component: {fileID: 1295085548}
   - component: {fileID: 1295085550}
   - component: {fileID: 1295085549}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: text(rare)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13103,7 +13102,7 @@ GameObject:
   - component: {fileID: 1319683438}
   - component: {fileID: 1319683440}
   - component: {fileID: 1319683439}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13333,7 +13332,7 @@ GameObject:
   - component: {fileID: 1353206999}
   - component: {fileID: 1353206998}
   - component: {fileID: 1353206997}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13500,7 +13499,7 @@ GameObject:
   - component: {fileID: 1374886695}
   - component: {fileID: 1374886694}
   - component: {fileID: 1374886696}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GoStoryPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13595,7 +13594,7 @@ GameObject:
   - component: {fileID: 1378275976}
   - component: {fileID: 1378275975}
   - component: {fileID: 1378275974}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GoStoryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14103,7 +14102,7 @@ GameObject:
   - component: {fileID: 1401426330}
   - component: {fileID: 1401426329}
   - component: {fileID: 1401426328}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14367,7 +14366,7 @@ GameObject:
   - component: {fileID: 1419194106}
   - component: {fileID: 1419194105}
   - component: {fileID: 1419194104}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14538,7 +14537,7 @@ GameObject:
   - component: {fileID: 1446043190}
   - component: {fileID: 1446043189}
   - component: {fileID: 1446043188}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14629,7 +14628,7 @@ GameObject:
   - component: {fileID: 1450595635}
   - component: {fileID: 1450595634}
   - component: {fileID: 1450595633}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14822,7 +14821,7 @@ GameObject:
   - component: {fileID: 1456857199}
   - component: {fileID: 1456857198}
   - component: {fileID: 1456857197}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15186,7 +15185,7 @@ GameObject:
   - component: {fileID: 1472676131}
   - component: {fileID: 1472676130}
   - component: {fileID: 1472676129}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button_yes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15474,7 +15473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496921894}
   - component: {fileID: 1496921895}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RareCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15713,7 +15712,7 @@ GameObject:
   - component: {fileID: 1514929583}
   - component: {fileID: 1514929582}
   - component: {fileID: 1514929581}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15811,7 +15810,7 @@ GameObject:
   - component: {fileID: 1515802206}
   - component: {fileID: 1515802205}
   - component: {fileID: 1515802204}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15974,7 +15973,7 @@ GameObject:
   - component: {fileID: 1563876717}
   - component: {fileID: 1563876719}
   - component: {fileID: 1563876718}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16088,7 +16087,7 @@ GameObject:
   - component: {fileID: 1569166906}
   - component: {fileID: 1569166905}
   - component: {fileID: 1569166904}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16187,7 +16186,7 @@ GameObject:
   - component: {fileID: 1571700750}
   - component: {fileID: 1571700749}
   - component: {fileID: 1571700752}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: storyBtn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16409,7 +16408,7 @@ GameObject:
   - component: {fileID: 1586389117}
   - component: {fileID: 1586389116}
   - component: {fileID: 1586389115}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16660,7 +16659,7 @@ GameObject:
   - component: {fileID: 1599376062}
   - component: {fileID: 1599376061}
   - component: {fileID: 1599376060}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16783,7 +16782,7 @@ GameObject:
   - component: {fileID: 1602683387}
   - component: {fileID: 1602683386}
   - component: {fileID: 1602683385}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button_no
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17174,7 +17173,7 @@ GameObject:
   - component: {fileID: 1613064341}
   - component: {fileID: 1613064340}
   - component: {fileID: 1613064339}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17457,7 +17456,7 @@ GameObject:
   - component: {fileID: 1646315783}
   - component: {fileID: 1646315782}
   - component: {fileID: 1646315781}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17676,7 +17675,7 @@ GameObject:
   - component: {fileID: 1678792579}
   - component: {fileID: 1678792578}
   - component: {fileID: 1678792577}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17774,7 +17773,7 @@ GameObject:
   - component: {fileID: 1681301816}
   - component: {fileID: 1681301815}
   - component: {fileID: 1681301814}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18049,7 +18048,7 @@ GameObject:
   - component: {fileID: 1698057801}
   - component: {fileID: 1698057800}
   - component: {fileID: 1698057799}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18667,7 +18666,7 @@ GameObject:
   - component: {fileID: 1778181408}
   - component: {fileID: 1778181410}
   - component: {fileID: 1778181409}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18748,7 +18747,7 @@ GameObject:
   - component: {fileID: 1778578983}
   - component: {fileID: 1778578982}
   - component: {fileID: 1778578981}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19388,7 +19387,7 @@ GameObject:
   - component: {fileID: 1862972207}
   - component: {fileID: 1862972206}
   - component: {fileID: 1862972205}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19479,7 +19478,7 @@ GameObject:
   - component: {fileID: 1871457224}
   - component: {fileID: 1871457223}
   - component: {fileID: 1871457222}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19653,7 +19652,7 @@ GameObject:
   - component: {fileID: 1880905932}
   - component: {fileID: 1880905931}
   - component: {fileID: 1880905930}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rare slot (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19905,7 +19904,7 @@ GameObject:
   - component: {fileID: 1915529150}
   - component: {fileID: 1915529149}
   - component: {fileID: 1915529148}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20093,7 +20092,7 @@ GameObject:
   - component: {fileID: 1930577156}
   - component: {fileID: 1930577158}
   - component: {fileID: 1930577157}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20247,7 +20246,7 @@ GameObject:
   - component: {fileID: 1943231146}
   - component: {fileID: 1943231145}
   - component: {fileID: 1943231144}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20339,7 +20338,7 @@ GameObject:
   - component: {fileID: 1946035012}
   - component: {fileID: 1946035011}
   - component: {fileID: 1946035010}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GoStoryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20822,7 +20821,7 @@ GameObject:
   - component: {fileID: 1973692905}
   - component: {fileID: 1973692904}
   - component: {fileID: 1973692907}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: storyBtn0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21044,7 +21043,7 @@ GameObject:
   - component: {fileID: 1999069339}
   - component: {fileID: 1999069338}
   - component: {fileID: 1999069337}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: number of blackhistoryPaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21232,7 +21231,7 @@ GameObject:
   - component: {fileID: 2004444520}
   - component: {fileID: 2004444519}
   - component: {fileID: 2004444518}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: rare slot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21333,7 +21332,7 @@ GameObject:
   - component: {fileID: 2012035744}
   - component: {fileID: 2012035743}
   - component: {fileID: 2012035742}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: GoStoryBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21774,7 +21773,7 @@ GameObject:
   - component: {fileID: 2057560155}
   - component: {fileID: 2057560154}
   - component: {fileID: 2057560153}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slot_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21864,7 +21863,7 @@ GameObject:
   - component: {fileID: 2084820514}
   - component: {fileID: 2084820516}
   - component: {fileID: 2084820515}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: text(normal)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22066,7 +22065,7 @@ GameObject:
   - component: {fileID: 2098263939}
   - component: {fileID: 2098263938}
   - component: {fileID: 2098263937}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22401,7 +22400,7 @@ GameObject:
   - component: {fileID: 2128160325}
   - component: {fileID: 2128160324}
   - component: {fileID: 2128160323}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: normal slot (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
